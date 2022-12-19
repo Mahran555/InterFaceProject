@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="1033.0" stylesheets="@../CssF/Logininterface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PaymentController">
+   <children>
+      <Pane fx:id="zr2" layoutX="55.0" layoutY="114.0" prefHeight="539.0" prefWidth="713.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <Separator layoutX="30.0" layoutY="123.0" prefHeight="3.0" prefWidth="661.0" />
+            <Label fx:id="IDTitle" layoutX="282.0" layoutY="44.0" text="Payment">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="37.0" layoutY="148.0" prefHeight="294.0" prefWidth="633.0">
+               <children>
+                  <TextField fx:id="IDHolderName" focusTraversable="false" layoutX="135.0" layoutY="43.0" prefHeight="25.0" prefWidth="194.0" promptText="Enter Name" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="43.0" />
+                  <Label layoutX="16.0" layoutY="43.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" text="Holder Name* :" AnchorPane.topAnchor="43.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="IDCreditCard" focusTraversable="false" layoutX="135.0" layoutY="87.0" prefHeight="25.0" prefWidth="194.0" promptText="16 Digits" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="84.0" />
+                  <Label layoutX="16.0" layoutY="86.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" text="CreditCardNumber*:" AnchorPane.topAnchor="84.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Label layoutX="16.0" layoutY="130.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" text="Expiry Date* :" AnchorPane.topAnchor="125.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <TextField fx:id="IDCvv" focusTraversable="false" layoutX="137.0" layoutY="168.0" prefHeight="25.0" prefWidth="75.0" promptText="3 Digits" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="166.0" />
+                  <Label layoutX="16.0" layoutY="157.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" text="CVV* :" AnchorPane.topAnchor="166.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Label layoutX="266.0" layoutY="124.0" prefHeight="27.0" prefWidth="16.0" text="/" AnchorPane.leftAnchor="266.0" AnchorPane.topAnchor="124.0" />
+                  <TextField fx:id="IDDateMonth" focusTraversable="false" layoutX="165.0" layoutY="125.0" prefHeight="25.0" prefWidth="89.0" promptText="MM" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="125.0" />
+                  <TextField fx:id="IDDateYear" focusTraversable="false" layoutX="311.0" layoutY="125.0" prefHeight="25.0" prefWidth="82.0" promptText="YYYY" AnchorPane.leftAnchor="277.0" AnchorPane.topAnchor="125.0" />
+                  <ComboBox fx:id="IDCoupon" layoutX="170.0" layoutY="211.0" promptText="Choose Coupon" />
+                  <ImageView fitHeight="207.0" fitWidth="180.0" layoutX="408.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/cvv.png" />
+                     </image>
+                  </ImageView>
+                  <RadioButton fx:id="IDSubPayment" layoutX="16.0" layoutY="260.0" mnemonicParsing="false" style="-fx-text-fill: #90BB14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );" text="Subscribtion Payment">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></RadioButton>
+                  <Button fx:id="IDUseCoupon" layoutX="318.0" layoutY="211.0" mnemonicParsing="false" onAction="#getCoupon" text="Use" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="IDConfirm" layoutX="541.0" layoutY="442.0" mnemonicParsing="false" onAction="#Confirm" style="-fx-background-radius: 30px;" text="Confirm" />
+            <Button fx:id="IDCancel" layoutX="411.0" layoutY="442.0" mnemonicParsing="false" onAction="#CancelOrder" style="-fx-background-radius: 30px;" text="Cancel Order" />
+            <Label fx:id="IDErrorLabel" layoutX="128.0" layoutY="496.0" />
+            <Label fx:id="IDTotalPrice" layoutX="100.0" layoutY="446.0" text="Total Price:" underline="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="60.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;">
+               <image>
+                  <Image url="@../icons/bill.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="985.0" layoutY="14.0" onMouseClicked="#clsoe" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="610.0" AnchorPane.leftAnchor="985.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../icons/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDhelp" fitHeight="34.0" fitWidth="44.0" layoutX="944.0" layoutY="14.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/help.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backarrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDLocationStep" fitHeight="54.0" fitWidth="72.0" layoutX="348.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/map.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="127.0" layoutY="99.0" prefHeight="3.0" prefWidth="773.0" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="133.0" />
+      <ImageView fx:id="IDOrderCatalagStep2" fitHeight="54.0" fitWidth="72.0" layoutX="451.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ordercatalog.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDMethodsStep3" fitHeight="54.0" fitWidth="72.0" layoutX="541.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/methods.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDPaymentStep4" fitHeight="54.0" fitWidth="72.0" layoutX="632.0" layoutY="35.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/payment.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="775.0" layoutY="339.0" prefHeight="3.0" prefWidth="229.0" />
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="366.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="175.0" fitWidth="168.0" layoutX="810.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/cashless-payment.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="454.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="556.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="647.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDCompleteMark" fitHeight="25.0" fitWidth="24.0" layoutX="647.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

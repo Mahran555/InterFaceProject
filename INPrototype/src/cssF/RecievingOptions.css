@@ -1,0 +1,84 @@
+.root{
+	-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);
+}
+#zr2{
+	-fx-background-color: "#FFFEFC";
+	-fx-background-radius: 30;
+	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);
+}
+#IDTitle{
+
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 30px;
+	-fx-font-weight:bold; 
+	-fx-font-family: "Courier New";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
+}
+#IDFirstName{
+	-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDLastName{
+		-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDStreet{
+			-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDHouseNumber{
+				-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDPhoneNumber{
+					-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDCheckout{
+		-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 13px;
+	-fx-font-weight:bold; 
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDOptionImg{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDPickupText{
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 23px;
+	-fx-font-weight:bold; 
+	-fx-font-family: "Courier New";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
+}
+#IDErrorMustFill{
+	-fx-font-size: 15px;
+	-fx-text-fill: red;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+		
+	}
+#IDCancelOrder
+	{
+	-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 13px;
+	-fx-font-weight:bold; 
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+	}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="823.0" style="-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartPageInterFaceController">
+   <children>
+      <Pane fx:id="zr2" layoutX="45.0" layoutY="125.0" prefHeight="424.0" prefWidth="496.0" style="-fx-background-color: white;">
+         <children>
+            <ScrollPane fx:id="IDScrollPane" layoutX="7.0" layoutY="14.0" prefHeight="260.0" prefWidth="482.0" style="-fx-background-color: transparent;">
+               <content>
+                  <VBox fx:id="IDvbox" prefHeight="250.0" prefWidth="460.0" style="-fx-background-color: transparent;" />
+               </content>
+            </ScrollPane>
+            <Button fx:id="IDCompleteOrderBtn" layoutX="336.0" layoutY="349.0" mnemonicParsing="false" onAction="#CompleteOrder" text="Complete Order" />
+            <Button fx:id="IDCancelOrderBtn" layoutX="45.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancelOrder" text="Canel Order" />
+            <Button fx:id="IDEditBtn" layoutX="197.0" layoutY="349.0" mnemonicParsing="false" onAction="#editOrder" text="Edit Order" />
+            <Label fx:id="IDDownPageAreaAndLocation" layoutX="45.0" layoutY="398.0" style="-fx-text-fill: #8bb020; -fx-font-size: 11; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" />
+            <Label fx:id="IDErrorEmptyCart" layoutX="218.0" layoutY="399.0" />
+            <Label fx:id="IDTotalCartPrice" layoutX="79.0" layoutY="301.0" />
+            <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="45.0" layoutY="292.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );">
+               <image>
+                  <Image url="@../icons/bill.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="775.0" layoutY="14.0" onMouseClicked="#clsoe" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDhelp" fitHeight="34.0" fitWidth="44.0" layoutX="734.0" layoutY="14.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/help.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backarrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDLocationStep1" fitHeight="54.0" fitWidth="72.0" layoutX="231.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/shopping-cart.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="152.0" layoutY="99.0" prefHeight="3.0" prefWidth="496.0" />
+      <ImageView fx:id="IDOrderCatalagStep2" fitHeight="54.0" fitWidth="72.0" layoutX="334.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ordercatalog.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDMethodsStep3" fitHeight="54.0" fitWidth="72.0" layoutX="424.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/methods.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDPaymentStep4" fitHeight="54.0" fitWidth="72.0" layoutX="515.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/payment.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="290.0" fitWidth="254.0" layoutX="563.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/mycart.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
