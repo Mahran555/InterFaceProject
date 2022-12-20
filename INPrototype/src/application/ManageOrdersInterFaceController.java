@@ -1,6 +1,8 @@
 package application;
 
 import javafx.scene.control.Button;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -10,6 +12,7 @@ import customermethods.Customer;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,6 +32,16 @@ import orders.Order;
 public class ManageOrdersInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
+	private String[] category= {"All","Chips","Soft-Drinks","Choclate-Bars","jelly-Sweets","Others"};
+	private String[] filter= {"All","Healthy","Low-Sugar","Big-Size","Normal-Size","Others"};
+	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
+	private String[] DBId = {"1","2","3"};
+	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
+	private String[] DBPrice = {"1","2","0.5"};
+	private String[] DBspecification = {"Others","Big-Size","Normal-Size"};
+	private String[] DBQuantities = {"10","1","3"};
+	private String[] DBArea = {"Haifa","Haifa","Haifa"};
+	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
     @FXML
     private TableView<TableRow> IDTableView;
     @FXML
@@ -51,6 +64,10 @@ public class ManageOrdersInterFaceController extends Application implements Init
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		if(Order.productsInCart==null)
+		{
+			Order.productsInCart=new ArrayList<>();
+		}
 		IDOrderid.setCellValueFactory(new PropertyValueFactory<TableRow, Integer>("OrderID"));
 		IDTotalPrice.setCellValueFactory(new PropertyValueFactory<TableRow, String>("totalPrice"));
 		IDproducts.setCellValueFactory(new PropertyValueFactory<TableRow, String>("products"));
@@ -95,8 +112,9 @@ public class ManageOrdersInterFaceController extends Application implements Init
     	continueBtn.requestFocus();
     	continueBtn.setOnMouseClicked(event ->  
     	{
-    		
-    		
+    		build();
+    		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+    		root=CommonMethods.switchScene(getClass(),stage, "CartPage.fxml","CartPage.css");
     	} );
  
     	//cancelBtn.setStyle("-fx-text-fill: white");
@@ -105,6 +123,14 @@ public class ManageOrdersInterFaceController extends Application implements Init
 
         return continueBtn;
     }
+	private void build() {
+		Order.orderID = 1;
+		Order.area = "Haifa";
+		Order.location = "Haifa-University";
+		Order.fromManger =1;
+		Order.productsFromMnager.add("Sprite");
+		
+	}
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -127,8 +153,7 @@ public class ManageOrdersInterFaceController extends Application implements Init
 			root=CommonMethods.switchScene(getClass(),stage, "CustomerPage.fxml","Customerinterface.css");
 		
 	  }
-    @SuppressWarnings("static-access")
-	public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
+    public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
 
     	Customer.help("This is your auto saved Cart Page\n"
     			+ "Press Complete Order tp complete this order\n"

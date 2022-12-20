@@ -27,6 +27,17 @@ public class Product {
 		this.Location = location;
 		this.area = area;
 	}
+	public Product(String productName, String productID, String productPrice, String quantity,String maxQuan,Node node,String location,String area) {
+		super();
+		this.productName = productName;
+		this.productID = productID;
+		this.productPrice = productPrice;
+		this.quantity = quantity;
+		this.maxQuan = maxQuan;
+		this.node = node;
+		this.Location = location;
+		this.area = area;
+	}
 
 	public String getProductName() {
 		return productName;

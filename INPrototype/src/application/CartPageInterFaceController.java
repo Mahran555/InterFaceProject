@@ -174,7 +174,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 			 
 			 IDErrorEmptyCart.setVisible(false);
 			 
-			   if(Order.productsInOrder.isEmpty()) {
+			   if(Order.productsInOrder.isEmpty()&&Order.fromManger == 0) {
 				   
 					 
 				   IDErrorEmptyCart.setVisible(true);

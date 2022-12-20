@@ -7,6 +7,9 @@ import javafx.scene.Node;
 
 public class Order {
 public static int orderID=0;
+public static int orderSize=3;
+public static int fromManger=0;
+public static ArrayList<String> productsFromMnager = new ArrayList<>();
 public static ArrayList<Product> productsInOrder = new ArrayList<>();//array to save products we have in an order
 public static Delivery deliveryInfo ;//to save delivery information
 public static String customerName;//to save the customer name of that order
@@ -25,6 +28,12 @@ public static int i=0;//to follow after indexes in products in order array
 	public static void setCartProduct(String productName,String productID,String productPrice,String quantity,String maxquantity,Node node,ProductCellController temp,String location,String area) {
 		
 		productsInOrder.add(new Product(productName,productID,productPrice,quantity,maxquantity,node,temp,location,area));
+		
+		
+		}
+	public static void setCartProduct2(String productName,String productID,String productPrice,String quantity,String maxquantity,Node node,String location,String area) {
+		
+		productsInOrder.add(new Product(productName,productID,productPrice,quantity,maxquantity,node,location,area));
 		
 		
 		}

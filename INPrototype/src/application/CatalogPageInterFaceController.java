@@ -50,7 +50,6 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	private String[] DBQuantities = {"10","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
-	public double sumPrices = 0;
 		@FXML
 		private Label IDDownPageLocationAndArea;
 		@FXML
@@ -225,7 +224,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 		
 	}
 	private void isInCart() {//for auto save cart
-		
+		Customer.IDMiniCartVBox = IDMiniCartVBox;
 		if(Order.productsInOrder!=null) //check if there is products in product array
 		{
 		for(int i=0 ;i<Order.productsInOrder.size();i++) //enter the names of the products only if the location is correct
@@ -282,8 +281,19 @@ public class CatalogPageInterFaceController extends Application implements Initi
 			product.getAddingProperties().setVisible(false);
 			product.getLabelAdded().setVisible(true);
 		}
-		
-		
+		/*
+		if(Order.fromManger == 1) {
+			if(product.getProductName().equals(Order.productsFromMnager.get(0))) {
+				try {
+					product.AddToCart(null);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Order.fromManger=0;
+			}
+		}
+		*/
 
 	}
 
@@ -380,7 +390,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 		   }
 		   else 
 		   {
-			   Order.orderPrice=sumPrices+"";
+			   Order.orderPrice=Order.sumPrices+"";
 			   Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 			   root=CommonMethods.switchScene(getClass(),stage, "RecievingOptions.fxml","RecievingOptions.css");
 		   }
