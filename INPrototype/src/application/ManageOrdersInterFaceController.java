@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import customermethods.CommonMethods;
 import customermethods.Customer;
 import javafx.application.Application;
@@ -14,7 +13,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -32,16 +30,7 @@ import orders.Order;
 public class ManageOrdersInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
-	private String[] category= {"All","Chips","Soft-Drinks","Choclate-Bars","jelly-Sweets","Others"};
-	private String[] filter= {"All","Healthy","Low-Sugar","Big-Size","Normal-Size","Others"};
-	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
-	private String[] DBId = {"1","2","3"};
-	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
-	private String[] DBPrice = {"1","2","0.5"};
-	private String[] DBspecification = {"Others","Big-Size","Normal-Size"};
-	private String[] DBQuantities = {"10","1","3"};
-	private String[] DBArea = {"Haifa","Haifa","Haifa"};
-	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
+
     @FXML
     private TableView<TableRow> IDTableView;
     @FXML
@@ -85,9 +74,7 @@ public class ManageOrdersInterFaceController extends Application implements Init
 		list.add(first);
 		IDTableView.setItems(list);
 	}
-	private void getDataDB() {
-		
-	}
+
 	public Button createCancelButton(TableRow first)
     {
     	Button cancelBtn=new Button("Cancel");
@@ -124,11 +111,35 @@ public class ManageOrdersInterFaceController extends Application implements Init
         return continueBtn;
     }
 	private void build() {
+		Order.fromManger=1;
 		Order.orderID = 1;
 		Order.area = "Haifa";
 		Order.location = "Haifa-University";
-		Order.fromManger =1;
 		Order.productsFromMnager.add("Sprite");
+		Node node = null;
+		FXMLLoader fXLoader = new FXMLLoader();
+		fXLoader.setLocation(getClass().getResource("/FXMLs/ProductCell.fxml"));
+	
+		
+		
+		try {
+			
+			node = fXLoader.load();
+			
+		} catch (IOException e) {
+			System.out.println("Exception in view - product Cell");
+			e.printStackTrace();
+		}
+		ProductCellController product= fXLoader.getController();
+		product.setData("Sprite", "1", "Soft-Drinks","1","Others","10");
+		product.setQuantity("2");
+
+		try {
+			product.AddToCart(null);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

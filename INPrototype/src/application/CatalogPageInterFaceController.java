@@ -105,6 +105,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//adding to combo box the value we want
 		checkCustomerPath();
+		Order.fromManger=0;
 		Customer.con=this;
 		IDDownPageLocationAndArea.setText(Order.area+", "+Order.location);
 		Customer.IDErrorEmptyCart = IDErrorEmptyCart;
@@ -225,6 +226,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	}
 	private void isInCart() {//for auto save cart
 		Customer.IDMiniCartVBox = IDMiniCartVBox;
+		
 		if(Order.productsInOrder!=null) //check if there is products in product array
 		{
 		for(int i=0 ;i<Order.productsInOrder.size();i++) //enter the names of the products only if the location is correct
@@ -281,19 +283,8 @@ public class CatalogPageInterFaceController extends Application implements Initi
 			product.getAddingProperties().setVisible(false);
 			product.getLabelAdded().setVisible(true);
 		}
-		/*
-		if(Order.fromManger == 1) {
-			if(product.getProductName().equals(Order.productsFromMnager.get(0))) {
-				try {
-					product.AddToCart(null);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				Order.fromManger=0;
-			}
-		}
-		*/
+		
+
 
 	}
 

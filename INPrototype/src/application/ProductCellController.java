@@ -174,17 +174,16 @@ public class ProductCellController  implements Initializable {
 				//set the data we need into the mini cart cell
 				productcart.setData(productName, productID,productPrice,getIDQuantity().getText(),getMaxQuantity(),node);//quan = maxquantity
 				Order.setCartProduct(productName, productID, productPrice,getQuantity(),getMaxQuantity(),node,this,Order.location,Order.area);//!!!
-				if(Customer.IDMiniCartVBox!=null)
-					Customer.IDMiniCartVBox.getChildren().add(node);//add the node to the mini cart (to the scene)
+				if(Order.fromManger!=1)
+				Customer.IDMiniCartVBox.getChildren().add(node);//add the node to the mini cart (to the scene)
 				Order.sumPrices +=productcart.getSum();
+				if(Order.fromManger!=1)
 				Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");
 					
 			}
 		else if(Order.productsInCart.contains(productName))
 		{
-			if(Customer.IDMiniCartVBox!=null)
 				Customer.IDMiniCartVBox.getChildren().add(Order.productsInOrder.get(Order.i).getNode());
-			if(Customer.IDTotalPrice!=null)
 				Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");
 		}
 
