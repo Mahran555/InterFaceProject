@@ -26,7 +26,10 @@ import javafx.stage.Stage;
 public class ManageOrdersInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
-	private String DBOrderStatus = "Completed"; 
+	private String[] DBOrderProducts = {"Sprite\nElit-Bar","Sprite"};
+	private String[] DBOrderPrice = {"10","1","5"};
+	private String[] DBOrderId = {"1","2"};
+	private String[] DBOrderStatus = {"Completed","NotCompleted"}; 
     @FXML
     private TableView<TableRow> IDTableView;
     @FXML
@@ -53,14 +56,18 @@ public class ManageOrdersInterFaceController extends Application implements Init
 		IDTotalPrice.setCellValueFactory(new PropertyValueFactory<TableRow, String>("totalPrice"));
 		IDproducts.setCellValueFactory(new PropertyValueFactory<TableRow, String>("products"));
 		IDAction.setCellValueFactory(new PropertyValueFactory<TableRow, HBox>("buttonsHbox"));
-		TableRow first = new TableRow();
+		
 	    list = IDTableView.getItems();
-		first.setOrderID(0);
-		first.setTotalPrice("12"+"$");
-		first.setProducts("Sprite\nElit-Bar\n");
-		if(DBOrderStatus.equals("NotCompleted")) 
+	    for(int i = 0 ; i<2;i++) 
+	    {
+	    	
+	    TableRow save = new TableRow();
+	    save.setOrderID(Integer.parseInt(DBOrderId[i]));
+	    save.setTotalPrice(DBOrderPrice[i]+"$");
+	    save.setProducts(DBOrderProducts[i]);
+		if(DBOrderStatus[i].equals("NotCompleted")) 
 		{
-		actionHbox =new HBox(createCancelButton(first));
+		actionHbox =new HBox(createCancelButton(save));
 		actionHbox.setSpacing(20);
 		actionHbox.setAlignment(Pos.CENTER);
 		
@@ -69,9 +76,10 @@ public class ManageOrdersInterFaceController extends Application implements Init
 			actionHbox =new HBox(createCompleteLabel());
 			actionHbox.setAlignment(Pos.CENTER);
 		}
-		first.setButtonsHbox(actionHbox);
-		list.add(first);
+		save.setButtonsHbox(actionHbox);
+		list.add(save);
 		IDTableView.setItems(list);
+	    }
 	}
 
 	private Label createCompleteLabel() {

@@ -25,7 +25,7 @@
 }
 .table-cell {
 	-fx-text-fill: "#8bb020";
-	-fx-font-size: 14px;
+	-fx-font-size: 15px;
 	-fx-font-weight:bold; 
 	-fx-font-family: "Courier New";
 	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
