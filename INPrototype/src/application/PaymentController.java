@@ -186,16 +186,18 @@ public class PaymentController extends Application implements Initializable  {
 	
 	
 	public void Confirm(ActionEvent event) throws Exception{//confirm button pressed(checkout)
+		
 		if(Order.customerType.equals("Subscriber")&&IDSubPayment.isSelected())//coustmer is subscriber and paying monthly
 		{
 			//completed order and switch to customer home page
 			Customer.confirmationMessage("Your total price is \n"+Order.orderPrice+"$ Do you want to proceed","Payment\n",getClass());
 			if(Customer.respond=="yes")
 			{
+				IDCompleteMark.setVisible(true);//v mark for payment
 				IDErrorLabel.setVisible(false);
 				Customer.CompletionMessage("Thank you\n Payment Confirmed ,your order has been submited \n"
 			  			+ "an email would be send to you with the receipt\n");
-				IDCompleteMark.setVisible(true);//v mark for payment
+				
 				Order.clearOrder();
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		  		root=CommonMethods.switchScene(getClass(),stage, "CustomerPage.fxml","CustomerInterface.css");
@@ -212,10 +214,10 @@ public class PaymentController extends Application implements Initializable  {
 			Customer.confirmationMessage("Your total prive is \n"+Order.orderPrice+" ,Do you want to proceed","Payment\n",getClass());
 			if(Customer.respond=="yes")
 			{
+				IDCompleteMark.setVisible(true);//v mark for payment
 				IDErrorLabel.setVisible(false);
 				Customer.CompletionMessage("Thank you\n Payment Confirmed ,your order has been submited \n"
 			  			+ "an email would be send to you with the receipt\n");
-				IDCompleteMark.setVisible(true);//v mark for payment
 				Order.clearOrder();
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		  		root=CommonMethods.switchScene(getClass(),stage, "CustomerPage.fxml","CustomerInterface.css");

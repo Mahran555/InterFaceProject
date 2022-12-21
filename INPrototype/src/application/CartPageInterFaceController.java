@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import customermethods.CommonMethods;
@@ -26,7 +27,18 @@ import orders.Order;
 public class CartPageInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
-
+	
+	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
+	private String[] DBId = {"1","2","3"};
+	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
+	private String[] DBPrice = {"1","2","0.5"};
+	private String[] DBspecification = {"Others","Big-Size","Normal-Size"};
+	private String[] DBMaxQuantities = {"10","1","3"};
+	private String[] DBQuantities = {"2","1","3"};
+	private String[] DBArea = {"Haifa","Haifa","Haifa"};
+	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
+	private String[] DBOnsale = {"1","3"};
+	private String DBDisccount = "20";
 	@FXML
 	private Label IDTotalCartPrice;
     @FXML
@@ -58,13 +70,52 @@ public class CartPageInterFaceController extends Application implements Initiali
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		//to identify loaded cart in data base set value of loadLastCart in order class to 0 or 1
+		
+		if(Order.productsInCart==null)
+			Order.productsInCart=new ArrayList<>();
 		IDErrorEmptyCart.setText("Cart is empty , Start new order\n");
 		IDErrorEmptyCart.setTranslateX(-65);
 		IDErrorEmptyCart.setVisible(false);
+		if(Order.loadLastCart ==1)
+			buildLastSavedCart();
 		checkAndRelease();
 		
 	}
+	private void buildLastSavedCart() {
+		//getting data from DB all products saved in the same area and location
+		Order.area = DBArea[0];
+		Order.location = DBLocation[0];
+		
+		for(int i =0 ;i< 2 ; i++) 
+		{
+		Node node = null;
+		FXMLLoader fXLoader = new FXMLLoader();
+		fXLoader.setLocation(getClass().getResource("/FXMLs/ProductCell.fxml"));
+	
+		
+		
+		try {
+			
+			node = fXLoader.load();
+			
+		} catch (IOException e) {
+			System.out.println("Exception in view - product Cell");
+			e.printStackTrace();
+		}
+		ProductCellController product= fXLoader.getController();
+		product.setData(DBName[i], DBId[i], DBCategory[i],DBPrice[i],DBspecification[i],DBMaxQuantities[i]);
+		product.setQuantity(DBQuantities[i]);
 
+		try {
+			product.AddToCart(null);
+		} catch (Exception e) {
+			System.out.println("AddToCart In CartPage failed");
+			e.printStackTrace();
+		}
+		}
+		Order.loadLastCart = 0;//loadded
+	}
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage= primaryStage;
@@ -142,6 +193,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 			Customer.confirmationMessage("Do you want to cancel this order\n","Cancel Order\n",getClass());
 			if(Customer.respond == "yes")
 			{
+				Order.loadLastCart = 0;
 				Order.clearOrder();
 				IDvbox.getChildren().clear();
 			 	Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -162,6 +214,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 			   }
 			   else 
 			   {
+				   Order.loadLastCart = 0;
 				   Customer.cameFrom="MyCart";
 				   Order.orderPrice=Order.sumPrices+"";
 				   Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -173,8 +226,8 @@ public class CartPageInterFaceController extends Application implements Initiali
 		 {
 			 
 			 IDErrorEmptyCart.setVisible(false);
-			 
-			   if(Order.productsInOrder.isEmpty()&&Order.fromManger == 0) {
+			 //&&Order.loadLastCart == 0 deleted
+			   if(Order.productsInOrder.isEmpty()) {
 				   
 					 
 				   IDErrorEmptyCart.setVisible(true);

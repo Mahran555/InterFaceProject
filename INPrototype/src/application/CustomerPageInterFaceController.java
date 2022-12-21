@@ -128,6 +128,7 @@ public class CustomerPageInterFaceController extends Application implements Init
 	
 	public void myCart(ActionEvent event) throws Exception
 	{
+		
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		root=CommonMethods.switchScene(getClass(),stage, "CartPage.fxml","CartPage.css");
 	}

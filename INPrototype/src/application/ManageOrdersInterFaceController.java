@@ -1,17 +1,14 @@
 package application;
 
 import javafx.scene.control.Button;
-
-import java.io.IOException;
+import javafx.scene.control.Label;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import customermethods.CommonMethods;
 import customermethods.Customer;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -25,12 +22,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import orders.Order;
 
 public class ManageOrdersInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
-
+	private String DBOrderStatus = "Completed"; 
     @FXML
     private TableView<TableRow> IDTableView;
     @FXML
@@ -53,10 +49,6 @@ public class ManageOrdersInterFaceController extends Application implements Init
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		if(Order.productsInCart==null)
-		{
-			Order.productsInCart=new ArrayList<>();
-		}
 		IDOrderid.setCellValueFactory(new PropertyValueFactory<TableRow, Integer>("OrderID"));
 		IDTotalPrice.setCellValueFactory(new PropertyValueFactory<TableRow, String>("totalPrice"));
 		IDproducts.setCellValueFactory(new PropertyValueFactory<TableRow, String>("products"));
@@ -64,18 +56,31 @@ public class ManageOrdersInterFaceController extends Application implements Init
 		TableRow first = new TableRow();
 	    list = IDTableView.getItems();
 		first.setOrderID(0);
-		first.setTotalPrice("55");
-		first.setProducts("fas3, mfso3,fas3en,fs3na");
-	
-		actionHbox =new HBox(createCancelButton(first),createContinueButton(first));
+		first.setTotalPrice("12"+"$");
+		first.setProducts("Sprite\nElit-Bar\n");
+		if(DBOrderStatus.equals("NotCompleted")) 
+		{
+		actionHbox =new HBox(createCancelButton(first));
 		actionHbox.setSpacing(20);
 		actionHbox.setAlignment(Pos.CENTER);
+		
+		}
+		else {
+			actionHbox =new HBox(createCompleteLabel());
+			actionHbox.setAlignment(Pos.CENTER);
+		}
 		first.setButtonsHbox(actionHbox);
 		list.add(first);
 		IDTableView.setItems(list);
 	}
 
-	public Button createCancelButton(TableRow first)
+	private Label createCompleteLabel() {
+		Label complete = new Label();
+		complete.setText("Completed");
+		complete.setStyle("-fx-font-size: 15px;"+"-fx-text-fill: #90BB14;"+"-fx-font-weight:bold;");
+		return complete;
+	}
+	private Button createCancelButton(TableRow first)
     {
     	Button cancelBtn=new Button("Cancel");
     	
@@ -86,13 +91,14 @@ public class ManageOrdersInterFaceController extends Application implements Init
     		list.remove(first);
     	} );
  
-    	cancelBtn.setStyle("-fx-background-radius: 50;"+"-fx-background-color: #90BB14;"+"-fx-font-weight:bold;"+"-fx-font-size: 14px;"
+    	cancelBtn.setStyle("-fx-background-radius: 50;"+"-fx-background-color: #90BB14;"+"-fx-font-weight:bold;"+"-fx-font-size: 12px;"
     	+"-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );"+"-fx-text-fill: white;");
-
+    	
         return cancelBtn;
     }
 	
-	public Button createContinueButton(TableRow first)
+	/*
+	private Button createContinueButton(TableRow first)
     {
     	Button continueBtn=new Button("Continue");
     	
@@ -104,14 +110,13 @@ public class ManageOrdersInterFaceController extends Application implements Init
     		root=CommonMethods.switchScene(getClass(),stage, "CartPage.fxml","CartPage.css");
     	} );
  
-    	//cancelBtn.setStyle("-fx-text-fill: white");
-    	continueBtn.setStyle("-fx-background-radius: 50;"+"-fx-background-color: #90BB14;"+"-fx-font-weight:bold;"+"-fx-font-size: 14px;"
+    	
+    	continueBtn.setStyle("-fx-background-radius: 50;"+"-fx-background-color: #90BB14;"+"-fx-font-weight:bold;"+"-fx-font-size: 12px;"
     	+"-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );"+"-fx-text-fill: white;");
-
+    	
         return continueBtn;
     }
 	private void build() {
-		Order.fromManger=1;
 		Order.orderID = 1;
 		Order.area = "Haifa";
 		Order.location = "Haifa-University";
@@ -137,11 +142,12 @@ public class ManageOrdersInterFaceController extends Application implements Init
 		try {
 			product.AddToCart(null);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println("AddToCart In ManageOrders failed");
 			e.printStackTrace();
 		}
 		
 	}
+	*/
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -197,10 +203,10 @@ public class ManageOrdersInterFaceController extends Application implements Init
 	    
 	    public TableRow(int orderID, String totalPrice, String products,HBox buttonsHbox,Button cancelButton ,Button continueButton) {
 			super();
-			OrderID = orderID;
-			totalPrice = totalPrice;
-			products = products;
-			buttonsHbox = buttonsHbox;
+			this.OrderID = orderID;
+			this.totalPrice = totalPrice;
+			this.products = products;
+			this.buttonsHbox = buttonsHbox;
 			
 		}
 

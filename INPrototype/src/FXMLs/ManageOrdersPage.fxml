@@ -20,10 +20,10 @@
                      <children>
                         <TableView fx:id="IDTableView" editable="true" layoutX="7.0" layoutY="13.0" prefHeight="286.0" prefWidth="684.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
                           <columns>
-                            <TableColumn fx:id="IDOrderid" prefWidth="75.0" text="OrderID" />
-                            <TableColumn fx:id="IDproducts" prefWidth="75.0" text="Products" />
-                              <TableColumn fx:id="IDTotalPrice" prefWidth="75.0" text="Total Price" />
-                              <TableColumn fx:id="IDAction" prefWidth="75.0" />
+                            <TableColumn fx:id="IDOrderid" prefWidth="91.0" resizable="false" text="OrderID" />
+                            <TableColumn fx:id="IDproducts" prefWidth="247.0" resizable="false" text="Products" />
+                              <TableColumn fx:id="IDTotalPrice" prefWidth="75.0" resizable="false" text="Total Price" />
+                              <TableColumn fx:id="IDAction" prefWidth="264.0" resizable="false" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

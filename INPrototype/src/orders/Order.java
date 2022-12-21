@@ -8,8 +8,7 @@ import javafx.scene.Node;
 public class Order {
 public static int orderID=0;
 public static int orderSize=3;
-public static int fromManger=0;
-public static ArrayList<String> productsFromMnager = new ArrayList<>();
+public static int loadLastCart=1;// to identify the loaded cart in order
 public static ArrayList<Product> productsInOrder = new ArrayList<>();//array to save products we have in an order
 public static Delivery deliveryInfo ;//to save delivery information
 public static String customerName;//to save the customer name of that order

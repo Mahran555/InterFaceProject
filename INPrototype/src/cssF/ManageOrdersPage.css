@@ -20,3 +20,20 @@
 #IDScrollPane .viewport{
 	-fx-background-color: transparent;
 }
+.table-view{
+	-fx-background-color: transparent;
+}
+.table-cell {
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 14px;
+	-fx-font-weight:bold; 
+	-fx-font-family: "Courier New";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
+	-fx-alignment: CENTER;
+}
+
+.table-view .column-header .label{
+-fx-font-size: 12px;
+-fx-text-fill: black;
+-fx-alignment: CENTER;
+}

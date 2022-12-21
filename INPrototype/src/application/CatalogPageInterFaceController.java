@@ -50,6 +50,8 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	private String[] DBQuantities = {"10","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
+	private String[] DBOnsale = {"1","3"};
+	private String DBDisccount = "20";
 		@FXML
 		private Label IDDownPageLocationAndArea;
 		@FXML
@@ -105,7 +107,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//adding to combo box the value we want
 		checkCustomerPath();
-		Order.fromManger=0;
+		Order.loadLastCart=0;
 		Customer.con=this;
 		IDDownPageLocationAndArea.setText(Order.area+", "+Order.location);
 		Customer.IDErrorEmptyCart = IDErrorEmptyCart;
