@@ -37,7 +37,8 @@ public class CartPageInterFaceController extends Application implements Initiali
 	private String[] DBQuantities = {"2","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
-
+	private String[] DBOnsale = {"1","2"};
+	private String DBDisccount = "20";
 	@FXML
 	private Label IDTotalCartPrice;
     @FXML
@@ -82,6 +83,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 		
 	}
 	@SuppressWarnings("unused")
+	
 	private void buildLastSavedCart() {
 		//getting data from DB all products saved in the same area and location
 		Order.area = DBArea[0];
@@ -106,6 +108,13 @@ public class CartPageInterFaceController extends Application implements Initiali
 		ProductCellController product= fXLoader.getController();
 		product.setData(DBName[i], DBId[i], DBCategory[i],DBPrice[i],DBspecification[i],DBMaxQuantities[i]);
 		product.setQuantity(DBQuantities[i]);
+		for(int j=0 ; j<DBOnsale.length;j++)//check if the product have a discount 
+			if(DBOnsale[j].equals(DBId[i]))
+				product.setProductDiscount(DBDisccount);//set discount for a product
+				
+				
+			
+			
 
 
 		try {
