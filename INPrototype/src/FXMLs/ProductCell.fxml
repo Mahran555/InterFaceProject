@@ -38,6 +38,12 @@
                </image>
             </ImageView>
             <Label fx:id="IDPrice" layoutX="78.0" layoutY="4.0" style="-fx-text-fill: #8bb020; -fx-font-size: 14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 0, 0 , 0, 0 ); -fx-font-weight: bold;" text="1$" underline="true" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="4.0" />
+            <ImageView fx:id="IDSaleOn" fitHeight="45.0" fitWidth="48.0" layoutX="-18.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );">
+               <image>
+                  <Image url="@../icons/sale.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="IDDiscount" layoutX="-2.0" layoutY="52.0" style="-fx-text-fill: #ef5350; -fx-font-size: 14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 0, 0 , 0, 0 ); -fx-font-weight: bold;" underline="true" />
          </children>
       </AnchorPane>
       <Label fx:id="IDLabelAdded" alignment="CENTER" layoutX="446.0" layoutY="5.0" prefHeight="121.0" prefWidth="196.0" style="-fx-text-fill: #8bb020; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 ); -fx-font-weight: bold; -fx-font-size: 15;" text="Added Product" visible="false">

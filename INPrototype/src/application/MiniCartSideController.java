@@ -65,7 +65,7 @@ public class MiniCartSideController  implements Initializable {
 		IDProductImg.setImage(img);
 		IDProductName.setText(name);
 		IDProductQuantity.setText(""+quan);
-		IDProductPrice.setText(Double.parseDouble(price)*Integer.parseInt(quan)+"$");
+		IDProductPrice.setText(String.format("%.2f",Double.parseDouble(price)*Double.parseDouble(quan))+"$");
 		this.node = node;
 		
 	}
@@ -137,9 +137,9 @@ public class MiniCartSideController  implements Initializable {
 			Order.updateProductQuantity(getName(),temp+"");
 			setQuantity(temp);
 			getQuantityTextField().setText(temp+"");//increase quantity
-			Order.sumPrices+=1;
+			Order.sumPrices+=1.0*Double.parseDouble(this.productPrice);
 			setSum(Order.sumPrices);///////////////////////
-			Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");
+			Customer.IDTotalPrice.setText("Toltal Price: "+String.format("%.2f",Order.sumPrices)+"$");
 		}
 	}
 		
@@ -160,9 +160,9 @@ public class MiniCartSideController  implements Initializable {
 			Order.updateProductQuantity(getName(),temp+"");
 			setQuantity(temp);
 			getQuantityTextField().setText(temp+"");//decrease quantity
-			Order.sumPrices-=1;
+			Order.sumPrices-=1.0*Double.parseDouble(this.productPrice);;
 			setSum(Order.sumPrices);
-			Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");
+			Customer.IDTotalPrice.setText("Toltal Price: "+String.format("%.2f",Order.sumPrices)+"$");
 			
 		}
 		
@@ -173,8 +173,8 @@ public class MiniCartSideController  implements Initializable {
 		Customer.IDMiniCartVBox.getChildren().remove(getNode());//remove from minicart vbox
 		Order.productsInCart.remove(getName());//remove name from the array of products in cart
 		Order.removeCartProduct(getName());
-		Order.sumPrices -= getQuantityNum()*Double.parseDouble(getPrice());//remove the sum from the total sum
-		Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");//set the new value of total sum after updating
+		Order.sumPrices -= Double.valueOf(getQuantityNum())*Double.parseDouble(getPrice());//remove the sum from the total sum
+		Customer.IDTotalPrice.setText("Toltal Price: "+String.format("%.2f",Order.sumPrices)+"$");//set the new value of total sum after updating
 		Customer.IDAddingProperties.setVisible(true);//return adding propirties to product cell
 		Customer.IDLabelAdded.setVisible(false);//hide/remove label added product to cart
 		

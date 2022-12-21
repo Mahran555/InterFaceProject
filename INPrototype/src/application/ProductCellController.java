@@ -33,8 +33,12 @@ public class ProductCellController  implements Initializable {
 	private String productID;
 	private String productName;
 	private String productPrice;
-
+	private String productDiscount;
     @FXML
+    private Label IDDiscount;
+	@FXML
+	private ImageView IDSaleOn;
+	@FXML
     private Label IDLabelAdded;
 	@FXML
     private Button IDAddToCartBtn;
@@ -102,9 +106,12 @@ public class ProductCellController  implements Initializable {
 	}
 	//save data 
 	public void setData(String name,String id,String catagory,String price,String specification,String quan) {
+		IDSaleOn.setVisible(false);
+		IDDiscount.setVisible(false);
 		this.img = new Image("/Products/"+id+".png"); 
 		this.productName = name;
 		this.productID = id;
+		
 		this.productPrice = price;
 		IDproductImg.setImage(img);
 		IDProductName.setText("Name: "+name);
@@ -178,7 +185,7 @@ public class ProductCellController  implements Initializable {
 				Customer.IDMiniCartVBox.getChildren().add(node);//add the node to the mini cart (to the scene)
 				Order.sumPrices +=productcart.getSum();
 				if(Order.loadLastCart!=1)
-				Customer.IDTotalPrice.setText("Toltal Price: "+Order.sumPrices+"$");
+				Customer.IDTotalPrice.setText("Toltal Price: "+String.format("%.2f",Order.sumPrices)+"$");
 					
 			}
 		else if(Order.productsInCart.contains(productName))
@@ -241,5 +248,22 @@ public class ProductCellController  implements Initializable {
 	}
 	public Label getLabelAdded() {
 		return this.IDLabelAdded;
+	}
+    public String getProductDiscount() {
+		return productDiscount;
+	}
+	public void setProductDiscount(String productDiscount) {
+		this.productDiscount = productDiscount;
+		if(productDiscount!="0") 
+		{
+			IDDiscount.setText("-"+productDiscount+"%");
+			IDDiscount.setVisible(true);
+			IDSaleOn.setVisible(true);
+			double temp;
+			temp = Double.parseDouble(this.productPrice)-Double.parseDouble(this.productPrice)*Double.parseDouble(this.productDiscount)/100;
+			this.productPrice = String.format("%.2f",temp) + "";
+			IDPrice.setText(""+this.productPrice+"$");
+			
+		}
 	}
 }

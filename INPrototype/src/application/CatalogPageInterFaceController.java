@@ -50,7 +50,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	private String[] DBQuantities = {"10","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
-	private String[] DBOnsale = {"1","3"};
+	private String[] DBOnsale = {"1"};
 	private String DBDisccount = "20";
 		@FXML
 		private Label IDDownPageLocationAndArea;
@@ -106,6 +106,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		//adding to combo box the value we want
+		
 		checkCustomerPath();
 		Order.loadLastCart=0;
 		Customer.con=this;
@@ -278,6 +279,12 @@ public class CatalogPageInterFaceController extends Application implements Initi
 		}
 		ProductCellController product= fXLoader.getController();
 		product.setData(name, id, cate,price,spec,quan);
+		for(int i=0 ; i<DBOnsale.length;i++)//check if the product have a discount 
+			if(DBOnsale[i].equals(id))
+				product.setProductDiscount(DBDisccount);//set discount for a product
+				
+				
+		
 		IDvbox.getChildren().add(node);
 		
 		if(Order.productsInOrder!=null&&Order.checkProductInArray(name))
