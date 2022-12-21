@@ -27,7 +27,7 @@ import orders.Order;
 public class CartPageInterFaceController extends Application implements Initializable {
 	Stage stage;
 	Parent root;
-	
+	private int DBSize = 2;
 	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
 	private String[] DBId = {"1","2","3"};
 	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
@@ -37,8 +37,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 	private String[] DBQuantities = {"2","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
-	private String[] DBOnsale = {"1","3"};
-	private String DBDisccount = "20";
+
 	@FXML
 	private Label IDTotalCartPrice;
     @FXML
@@ -82,12 +81,13 @@ public class CartPageInterFaceController extends Application implements Initiali
 		checkAndRelease();
 		
 	}
+	@SuppressWarnings("unused")
 	private void buildLastSavedCart() {
 		//getting data from DB all products saved in the same area and location
 		Order.area = DBArea[0];
 		Order.location = DBLocation[0];
 		
-		for(int i =0 ;i< 2 ; i++) 
+		for(int i =0 ;i< DBSize ; i++) 
 		{
 		Node node = null;
 		FXMLLoader fXLoader = new FXMLLoader();
@@ -106,6 +106,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 		ProductCellController product= fXLoader.getController();
 		product.setData(DBName[i], DBId[i], DBCategory[i],DBPrice[i],DBspecification[i],DBMaxQuantities[i]);
 		product.setQuantity(DBQuantities[i]);
+
 
 		try {
 			product.AddToCart(null);
