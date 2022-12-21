@@ -19,40 +19,98 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 
-
+/**
+ * This Class is a Customer Page Controller for CustomerPage.fxml ,it runs all the methods 
+ * that functions the choices of the customer :
+ * to Start Order 
+ * to manage Orders
+ * to MyCart
+ * @author Mahran
+ *
+ */
 public class CustomerPageInterFaceController extends Application implements Initializable{
-
+	
+	/**
+	 * Label that shows the customer's type {subscriber,regular}
+	 */
 	@FXML
 	private Label IDCustomerType;
+	/**
+	 * Label that shows the customer's statues {approved , suspended..}
+	 */
 	@FXML
     private Label IDCustomerStatues;
+    /**
+     * Label that shows the customer's id
+     */
     @FXML
     private Label IDCustomerid;
+    /**
+     * Label that shows the customer's number of orders that he made
+     */
     @FXML
     private Label IDNumOrders;
+    /**
+     * Label that shows the customer's name
+     */
     @FXML
     private Label IDnamelabel1;
+    /**
+     * ImageView that contains a small cart icon for decoration 
+     */
     @FXML
     private ImageView IDcartimg1;
+    /**
+     * ImageView that contains a small managing kit icon for decoration 
+     */
     @FXML
     private ImageView IDsmanageordersimg1;
+    /**
+     * ImageView that contains a small starting choice icon for decoration 
+     */
     @FXML
     private ImageView IDstartorderimg1;
+    /**
+     * a white container to contain objects {buttons ,images,..} and decoration 
+     */
     @FXML 
     private Pane zr2;
+    /**
+     * Button to MyCart
+     */
     @FXML
     private Button IDcart;
+    /**
+     * Button to Logout
+     */
     @FXML
     private Button logoutBtn;
+    /**
+     * Button to Manage Orders
+     */
     @FXML
     private Button manageO1;
+    /**
+     * Button to Start Order
+     */
     @FXML
     private Button startO1;
     
-    //private HashMap<String,ArrayList<String> > customerInfo = new HashMap<String, ArrayList<String>>();
+  
 
+	/**
+	 * to save and show the stage
+	 */
 	Stage stage;
+	/**
+	 * to save and the root
+	 */
 	Parent root;
+	/**
+	 *Method to start the primary scene and set the stage 
+	 *used only for starting from customer page nothing before 
+	 *could be deleted
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -68,13 +126,25 @@ public class CustomerPageInterFaceController extends Application implements Init
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 *initialize the customer details
+	 *set the name
+	 *set customer details
+	 *
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		setNameLabel("hasan");//set the name
-			setLabelsDetails("1","Approved","C01","Subscriber");//set customer details
+		setNameLabel("hasan");
+			setLabelsDetails("1","Approved","C01","Subscriber");
 		
 	}
+	/**
+	 * Method for closing the application, the window of the application would be closed
+	 * @param event event of the X icon clicked
+	 * @throws Exception Exception will be thrown if an error occurs
+	 */
 	public void clsoe(MouseEvent event) throws Exception
 	  {
 		stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
@@ -82,6 +152,11 @@ public class CustomerPageInterFaceController extends Application implements Init
 		
 	  }
 
+    /**
+     * Method for logging out from customer page , switches stage to the login page
+     * @param event event of the logout Button clicked
+     * @throws Exception Exception will be thrown if an error occurs when switching the stage 
+     */
     public void logout(ActionEvent event) throws Exception
    {
  	   
@@ -90,6 +165,12 @@ public class CustomerPageInterFaceController extends Application implements Init
 	 
    }
 
+	/**
+	 * Method for clicking the help icon ,a windows will show with a message and explain the scene
+	 * @param event event of the help icon clicked
+	 * the scene and what every button do
+	 * @throws Exception Exception will be thrown if an error occurs from Customer class 
+	 */
 	public void help(MouseEvent event) throws Exception{
   
     	Customer.help("This is a Customer homepage:\n"
@@ -99,11 +180,23 @@ public class CustomerPageInterFaceController extends Application implements Init
     			+ "\nPress Logout to logout from your current page");
 
     }
-    public void setNameLabel(String name)//to set the name label after welcome back
+ 
+    /**
+     * Method to set the name label after welcome back label
+     * @param name name of the customer
+     */
+    private void setNameLabel(String name)
     {
     	IDnamelabel1.setText(name);
     	Order.customerName = name;
     }
+	/**
+	 * Method to set/show customer details on his page 
+	 * @param orderNumbers the number of orders that the customer made
+	 * @param status the status of the customer in the system
+	 * @param cID the cutsomer's id
+	 * @param type the customer's type
+	 */
 	public void setLabelsDetails(String orderNumbers,String status,String cID,String type){//to set Customer details
 		Order.customerID=cID;
 		Order.customerType=type;
@@ -114,6 +207,11 @@ public class CustomerPageInterFaceController extends Application implements Init
 		
 		
 	}
+	/**
+	 * Method that changes stages when Start Order button is clicked
+	 * @param event event of the Start Order Button clicked
+	 * @throws Exception Exception will be thrown if an error occurs when switching the stage
+	 */
 	public void startOrder(ActionEvent event) throws Exception
 	{
 
@@ -122,16 +220,23 @@ public class CustomerPageInterFaceController extends Application implements Init
 	
 	}
 
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
+
+	/**
+	 * Method that changes stages when My Cart button is clicked
+	 * @param event event of the My Cart Button clicked
+	 * @throws Exception Exception will be thrown if an error occurs when switching the stage
+	 */
 	public void myCart(ActionEvent event) throws Exception
 	{
 		
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		root=CommonMethods.switchScene(getClass(),stage, "CartPage.fxml","CartPage.css");
 	}
+	/**
+	 * Method that changed stages when Manage Orders button is clicked
+	 * @param event event of the Manage Orders Button clicked
+	 * @throws Exception Exception will be thrown if an error occurs when switching the stage
+	 */
 	public void manageOrders(ActionEvent event) throws Exception{
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		root=CommonMethods.switchScene(getClass(),stage, "ManageOrdersPage.fxml","ManageOrdersPage.css");
