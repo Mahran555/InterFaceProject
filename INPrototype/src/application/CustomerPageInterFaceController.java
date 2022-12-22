@@ -166,9 +166,8 @@ public class CustomerPageInterFaceController extends Application implements Init
    }
 
 	/**
-	 * Method for clicking the help icon ,a windows will show with a message and explain the scene
-	 * @param event event of the help icon clicked
-	 * the scene and what every button do
+	 * Method for clicking the help icon ,a windows will show with a message and explain the scene/page
+	 * @param event event of the help icon clicked the scene/page and what every button do
 	 * @throws Exception Exception will be thrown if an error occurs from Customer class 
 	 */
 	public void help(MouseEvent event) throws Exception{
