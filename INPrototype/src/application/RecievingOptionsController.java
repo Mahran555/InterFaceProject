@@ -23,38 +23,104 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import orders.Order;
 
+/**
+ * This Class is a Receiving Options Page Controller for RecievingOprions.fxml ,it runs all the methods
+ * that functions the choice of receiving the order by the customer
+ * the choices are
+ * pickup (physical pickup)
+ * Delivery 
+ * Note: this class uses help from Customer and Order class to set and get some functionalities 
+ * @author Mahran
+ *
+ */
 public class RecievingOptionsController extends Application implements Initializable {
+    /**
+     * to save and show the stage
+     */
     Stage stage;
+    /**
+     * to save and the root
+     */
     Parent root;
+    /**
+     * ImageView to show what page customer came from
+     */
     @FXML
     private ImageView IDLocationStep;
+    /**
+     * Button for cancel order
+     */
     @FXML
     private Button IDCancelOrder;
+    /**
+     * Label that shows error message
+     */
     @FXML
     private Label IDErrorMustFill;
+    /**
+     * Label to shows a message when customer choose a pickup option
+     */
     @FXML
     private Label IDPickupText;
+    /**
+     * RadioButton to select Delivery option
+     */
     @FXML
     private RadioButton IDRadioDelivery;
+    /**
+     * RadioButton to select Pickup option
+     */
     @FXML
     private RadioButton IDRadioPickup; 
+    /**
+     * ImageView to show an image of the option choice
+     */
     @FXML
     private ImageView IDOptionImg;
+    /**
+     * Button for Complete Order 
+     */
     @FXML
     private Button IDCheckout;
+    /**
+     * TextField to get the customer's House number
+     */
     @FXML
     private TextField IDHouseNumber;
+    /**
+     * TextField to get the customer's street address
+     */
     @FXML
     private TextField IDStreet;
+    /**
+     * TextField to get the customer's first name
+     */
     @FXML
     private TextField IDFirstName;
+    /**
+     * TextField to get the customer's last name
+     */
     @FXML
     private TextField IDLastName;
+    /**
+     * TextField to get the customer's phone number
+     */
     @FXML
     private TextField IDPhoneNumber;
+    /**
+     * AnchorPane that contains the all TextFields 
+     */
     @FXML
     private AnchorPane DeliveryInfo;
+    /**
+     * to save the image (to set it in the ImageView)
+     */
     private Image img;
+	/**
+	 * initialize labels and text fields
+	 *initialize the current path that customer took
+	 *initialize all the details that needed in the helper classes 
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Customer.IDLocationStep = IDLocationStep;
@@ -87,7 +153,7 @@ public class RecievingOptionsController extends Application implements Initializ
 	 * @param event event of the X icon clicked
 	 * @throws Exception Exception will be thrown if an error occurs
 	 */
-	public void clsoe(MouseEvent event) throws Exception // close window
+	public void clsoe(MouseEvent event) throws Exception 
 	  {
 		stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 		stage.close();
@@ -99,13 +165,13 @@ public class RecievingOptionsController extends Application implements Initializ
 	 * @param event event of the help icon clicked the scene/page and what every button do
 	 * @throws Exception Exception will be thrown if an error occurs from Customer class 
 	 */
-	public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
+	public void help(MouseEvent event) throws Exception{
   	
 	Customer.help("pick your recieving option \n"
   			+ "Press PickUp to pick the order yourself\n"
   		   +  "Press Delivery and fill delivery information for delivery option\n"
   		   +  "Press Checkout to complete your order\n"
-  		   +  "Press Cancel Order if you wish to cancel your order\n" );//showed message
+  		   +  "Press Cancel Order if you wish to cancel your order\n" );
 
   }
 	
@@ -114,7 +180,7 @@ public class RecievingOptionsController extends Application implements Initializ
 	 * @param event event of the the arrow (back) icon clicked
 	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
 	 */
-	public void back(MouseEvent event) throws Exception // close window
+	public void back(MouseEvent event) throws Exception 
 	  {
 		
 		
@@ -123,6 +189,13 @@ public class RecievingOptionsController extends Application implements Initializ
 		
 	  }
 	
+	/**
+	 * Method for choosing the pickup option, in case this option is chosen
+	 * a label message would show explaining his choice with an image that
+	 * shows his option
+	 * @param event event pickup Radio Button is clicked 
+	 * @throws Exception Exception will be thrown if an error occurs
+	 */
 	public void PhysicalRecieving(ActionEvent event) throws Exception
 	{
 		IDRadioPickup.setSelected(true);//keep it selected
@@ -141,22 +214,30 @@ public class RecievingOptionsController extends Application implements Initializ
 		
 	}
 	
+	/**
+	 * Method for choosing the delivery option, in case this option is chosen
+	 * all text fields needed to get his information will show up and an image that
+	 * shows his option
+	 * @param event event delivery Radio Button is clicked 
+	 * @throws Exception Exception will be thrown if an error occurs
+	 */
 	public void DeliveryRecieving(ActionEvent event) throws Exception
 	{
-		IDRadioDelivery.setSelected(true);//keep it selected
-		IDErrorMustFill.setVisible(false);//error label
-		IDCheckout.setVisible(true);//check out button show
-		IDPickupText.setVisible(false);//hide pickup text
-		IDRadioPickup.setSelected(false);//remove selection of pickup radio button
-		//insert the needed image
+		IDRadioDelivery.setSelected(true);
+		IDErrorMustFill.setVisible(false);
+		IDCheckout.setVisible(true);
+		IDPickupText.setVisible(false);
+		IDRadioPickup.setSelected(false);
 		img = new Image("/icons/delivery-man.png");
 		IDOptionImg.setImage(img);
 		IDOptionImg.setVisible(true);
-		DeliveryInfo.setVisible(true);//show delivery information fields
+		DeliveryInfo.setVisible(true);
 		
 	}
 	
 	/**
+	 * Method to check the option and the (if everything is legal) ,in case everything is fine
+	 * it will proceed To Payment Page
 	 * @param event
 	 * @throws Exception
 	 */
@@ -174,18 +255,15 @@ public class RecievingOptionsController extends Application implements Initializ
 			}
 			else
 			{
-				Order.methodOfDelivery = "Delivery";//set the method in order class as delivery
-				//set delivery information
+				Order.methodOfDelivery = "Delivery";
 				Order.setDelivery(IDFirstName.getText(),IDLastName.getText(),IDPhoneNumber.getText(),IDHouseNumber.getText(),IDStreet.getText());
-				//change to the next page
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				root=CommonMethods.switchScene(getClass(),stage, "PaymentPage.fxml","PaymentPage.css");
 				
 			}
 		}
 		else {
-			Order.methodOfDelivery = "PickUp";//set the method in order class as pickup
-			//change to the next page
+			Order.methodOfDelivery = "PickUp";
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		root=CommonMethods.switchScene(getClass(),stage, "PaymentPage.fxml","PaymentPage.css");
 		}
