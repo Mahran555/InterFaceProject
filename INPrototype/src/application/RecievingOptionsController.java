@@ -37,28 +37,28 @@ public class RecievingOptionsController extends Application implements Initializ
     @FXML
     private RadioButton IDRadioDelivery;
     @FXML
-    private RadioButton IDRadioPickup;
-    private Image img;
+    private RadioButton IDRadioPickup; 
     @FXML
     private ImageView IDOptionImg;
     @FXML
     private Button IDCheckout;
     @FXML
-    TextField IDHouseNumber;
+    private TextField IDHouseNumber;
     @FXML
-    TextField IDStreet;
+    private TextField IDStreet;
     @FXML
-    TextField IDFirstName;
+    private TextField IDFirstName;
     @FXML
-    TextField IDLastName;
+    private TextField IDLastName;
     @FXML
-    TextField IDPhoneNumber;
+    private TextField IDPhoneNumber;
     @FXML
-    AnchorPane DeliveryInfo;
+    private AnchorPane DeliveryInfo;
+    private Image img;
 	@Override
-	
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		checkCustomerPath();
+		Customer.IDLocationStep = IDLocationStep;
+		Customer.checkCustomerPath();
 		Order.orderPrice = Order.sumPrices+"";
 		IDErrorMustFill.setText("All fields with * mark must be filled corretly\n");
 		IDErrorMustFill.setVisible(false);
@@ -68,6 +68,11 @@ public class RecievingOptionsController extends Application implements Initializ
 		Customer.textLegality(IDPhoneNumber,10);//text legality for phone number with length 10
 		Customer.textLegality(IDHouseNumber,3);//text legality for house number with length 3
 	}
+	/**
+	 *Method to start the primary scene and set the stage 
+	 *used only for starting from customer page nothing before 
+	 *could be deleted
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		stage= primaryStage;
@@ -76,32 +81,17 @@ public class RecievingOptionsController extends Application implements Initializ
 	}
     
 	
-
-	
-	
-
-    
-
-	
+	/**
+	 * Method for closing the application, the window of the application would be closed
+	 * @param event event of the X icon clicked
+	 * @throws Exception Exception will be thrown if an error occurs
+	 */
 	public void clsoe(MouseEvent event) throws Exception // close window
 	  {
 		stage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
 		stage.close();
 	  }
 	
-	private void checkCustomerPath() {
-		if(Customer.cameFrom.equals("MyCart"))
-		{
-			img = new Image("/icons/shopping-cart.png");
-			IDLocationStep.setImage(img);
-		}
-		else if(Customer.cameFrom.equals("Location"))
-		{
-			img = new Image("/icons/map.png");
-			IDLocationStep.setImage(img);
-		}
-		
-	}
 
 	public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
   	

@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import orders.Order;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -57,10 +56,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	 * to save and the root
 	 */
 	Parent root;
-	/**
-	 * Image to help change the image path (top bar) according to the path the the customer took
-	 */
-	private Image img;
+
 	/**
 	 * to save the size of columns information in the data base
 	 */
@@ -154,7 +150,8 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		checkCustomerPath();
+		Customer.IDLocationStep = IDLocationStep;
+		Customer.checkCustomerPath();
 		Order.loadLastCart=0;
 		Customer.con=this;
 		IDDownPageLocationAndArea.setText(Order.area+", "+Order.location);
@@ -195,22 +192,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 		}
 	}
 	
-	/**
-	 * Method to set path image according to the path that the customer took
-	 */
-	private void checkCustomerPath() {
-		if(Customer.cameFrom.equals("MyCart"))
-		{
-			img = new Image("/icons/shopping-cart.png");
-			IDLocationStep.setImage(img);
-		}
-		else if(Customer.cameFrom.equals("Location"))
-		{
-			img = new Image("/icons/map.png");
-			IDLocationStep.setImage(img);
-		}
-		
-	}
+
 	/**
 	 * Method for closing the application, the window of the application would be closed
 	 * @param event event of the X icon clicked

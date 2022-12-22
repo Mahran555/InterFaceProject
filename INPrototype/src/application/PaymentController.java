@@ -31,7 +31,6 @@ public class PaymentController extends Application implements Initializable  {
 	private String finalPrice;
     Stage stage;
     Parent root;
-    private Image img;
     @FXML
     private ImageView IDLocationStep;
     @FXML
@@ -73,7 +72,8 @@ public class PaymentController extends Application implements Initializable  {
     private Button IDUseCoupon;
     @Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-    	checkCustomerPath();
+    	Customer.IDLocationStep = IDLocationStep;
+    	Customer.checkCustomerPath();
 		IDErrorLabel.setVisible(false);
 		IDSubPayment.setVisible(true);
 		checkCustomer();
@@ -89,19 +89,7 @@ public class PaymentController extends Application implements Initializable  {
 		
 	}
   
-	private void checkCustomerPath() {
-		if(Customer.cameFrom.equals("MyCart"))
-		{
-			img = new Image("/icons/shopping-cart.png");
-			IDLocationStep.setImage(img);
-		}
-		else if(Customer.cameFrom.equals("Location"))
-		{
-			img = new Image("/icons/map.png");
-			IDLocationStep.setImage(img);
-		}
-		
-	}
+
     public void chooseCoupon(ActionEvent event) {
     	if(IDCoupon.getValue()=="None")
     	{

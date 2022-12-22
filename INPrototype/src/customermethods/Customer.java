@@ -8,6 +8,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -24,7 +26,11 @@ public class Customer {
 	public static AnchorPane IDAddingProperties;//anchor adding properties in product cell
 	public static Label IDLabelAdded;//add to cart label in product cell
 	public static CatalogPageInterFaceController con;//controller for catalog page (to activate search when needed "refresh")
-	
+	public static ImageView IDLocationStep;
+	/**
+	 * Image to help change the image path (top bar) according to the path the the customer took
+	 */
+	private static Image img;
 	@SuppressWarnings("static-access")
 	public static void help (String message) {
     	Alert alert = new Alert(AlertType.INFORMATION);//init alert message for information
@@ -83,6 +89,22 @@ public class Customer {
 	  	alert.initStyle(StageStyle.DECORATED.UNDECORATED);//style
 	  	alert.showAndWait();//show and wait untill ok is pressed
 	  	
+	}
+	/**
+	 * Method to set path image according to the path that the customer took
+	 */
+	public static void checkCustomerPath() {
+		if(Customer.cameFrom.equals("MyCart"))
+		{
+			img = new Image("/icons/shopping-cart.png");
+			IDLocationStep.setImage(img);
+		}
+		else if(Customer.cameFrom.equals("Location"))
+		{
+			img = new Image("/icons/map.png");
+			IDLocationStep.setImage(img);
+		}
+		
 	}
 
 
