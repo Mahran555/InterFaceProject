@@ -141,10 +141,10 @@ public class PaymentController extends Application implements Initializable  {
 		IDCoupon.getItems().addAll(coupons);
 		IDErrorLabel.setText("All fields with * mark must be filled correctly\n");
 		IDTotalPrice.setText("Toltal Price: "+Order.orderPrice+"$");
-			Customer.textLegality(IDCreditCard,16);//text legality for credit card number with length 16
-			Customer.textLegality(IDDateMonth,2);//text legality for month with length 2
-			Customer.textLegality(IDDateYear,4);//text legality for year with length 4
-			Customer.textLegality(IDCvv,3);//text legality for cvv with length 2
+			Customer.textLegality(IDCreditCard,16);
+			Customer.textLegality(IDDateMonth,2);
+			Customer.textLegality(IDDateYear,4);
+			Customer.textLegality(IDCvv,3);
 			IDCoupon.setOnAction(this::chooseCoupon);
 
 		
@@ -209,7 +209,7 @@ public class PaymentController extends Application implements Initializable  {
      * Method that gets the customer's coupon and returns the discount as a double 
      * @return discountNum
      */
-    private double CouponDiscount() //get the discount from the coupon (number)
+    private double CouponDiscount() 
     {
     	String coupon = IDCoupon.getValue();
     	String discount[]=coupon.split("-");
@@ -220,13 +220,13 @@ public class PaymentController extends Application implements Initializable  {
 	/**
 	 * Method to check if the customer is a subscriber or a regular customer
 	 */
-	public void checkCustomer() {//if the customer is a subscriber then he can pay using subscribtion payment
+	public void checkCustomer() {
 		
 		if(Order.customerType.equals("Subscriber")) {
-			IDSubPayment.setVisible(true);//show subscribtion payment option
+			IDSubPayment.setVisible(true);
 		}
 		else 
-			IDSubPayment.setVisible(false);//hide subscribtion payment option(not subscriber)
+			IDSubPayment.setVisible(false);
 	}
 
 	
@@ -246,13 +246,13 @@ public class PaymentController extends Application implements Initializable  {
 	 * @param event event of the help icon clicked the scene/page and what every button do
 	 * @throws Exception Exception will be thrown if an error occurs from Customer class 
 	 */
-	public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
+	public void help(MouseEvent event) throws Exception{
   	
 	Customer.help("All Fields with * are necessary fill \n"
   			+ "Press Coupon and choose one if you have\n"
   			+ "Press confirm to submit your Order\n"
   			+ "Press Cancel Order to Cancel your order\n"
-  			+ "Press <- to go back to the recieving options Page(if you want to change the method)\n" );//showed message
+  			+ "Press <- to go back to the recieving options Page(if you want to change the method)\n" );
 
   }
 	
