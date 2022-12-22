@@ -68,6 +68,7 @@ public class RecievingOptionsController extends Application implements Initializ
 		Customer.textLegality(IDPhoneNumber,10);//text legality for phone number with length 10
 		Customer.textLegality(IDHouseNumber,3);//text legality for house number with length 3
 	}
+	
 	/**
 	 *Method to start the primary scene and set the stage 
 	 *used only for starting from customer page nothing before 
@@ -93,6 +94,11 @@ public class RecievingOptionsController extends Application implements Initializ
 	  }
 	
 
+	/**
+	 * Method for clicking the help icon ,a windows will show with a message and explain the scene/page
+	 * @param event event of the help icon clicked the scene/page and what every button do
+	 * @throws Exception Exception will be thrown if an error occurs from Customer class 
+	 */
 	public void help(MouseEvent event) throws Exception{//to the throw a message when "question" pressed
   	
 	Customer.help("pick your recieving option \n"
@@ -103,6 +109,11 @@ public class RecievingOptionsController extends Application implements Initializ
 
   }
 	
+	/**
+	 * Method for going back to the previous page in this case the Catalog Page
+	 * @param event event of the the arrow (back) icon clicked
+	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
+	 */
 	public void back(MouseEvent event) throws Exception // close window
 	  {
 		
@@ -111,6 +122,7 @@ public class RecievingOptionsController extends Application implements Initializ
 			root=CommonMethods.switchScene(getClass(),stage, "CatalogPage.fxml","OrderCatalogPage.css");
 		
 	  }
+	
 	public void PhysicalRecieving(ActionEvent event) throws Exception
 	{
 		IDRadioPickup.setSelected(true);//keep it selected
@@ -144,6 +156,10 @@ public class RecievingOptionsController extends Application implements Initializ
 		
 	}
 	
+	/**
+	 * @param event
+	 * @throws Exception
+	 */
 	public void ProcceedToPayment(ActionEvent event) throws Exception
 	{
 		
@@ -174,13 +190,32 @@ public class RecievingOptionsController extends Application implements Initializ
 		root=CommonMethods.switchScene(getClass(),stage, "PaymentPage.fxml","PaymentPage.css");
 		}
 	}
-	//to check empty fields 
+	
+	
+	/**
+	 * Method to check if there is an empty field empty fields in any TextField given as a parameter
+	 * true in case there is an empty field and false if there isn't
+	 * @param IDFN first name text field
+	 * @param IDLN last name text field
+	 * @param IDPN phone number text field
+	 * @param IDHN house number text field
+	 * @param check another parameter if needed
+	 * @return returns true in case there is an empty field and false if there isn't
+	 */
 	private boolean checkEmptyFields(TextField IDFN,TextField IDLN,TextField IDPN,TextField IDHN,String check) {
 		if(IDFN.getText().equals(check)||IDLN.getText().equals(check)||IDPN.getText().equals(check)||IDHN.getText().equals(check))
 			return true;
 		return false;
 	}
 	
+	/**
+	 * Method that cancel the order in case Cancel Order button is clicked
+	 * the method would show a message of confirmation for the customer 
+	 * and ask confirmation from the customer, in case the answer is yes 
+	 * the stage goes back to the Customer Page 
+	 * @param event event of the Cancel Order button clicked
+	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
+	 */
 	public void CancelOrder(ActionEvent event) throws Exception{//cancel order
 		Customer.confirmationMessage("Do you want to cancel this order\n","Cancel Order\n",getClass());
 		if(Customer.respond == "yes")
@@ -194,6 +229,9 @@ public class RecievingOptionsController extends Application implements Initializ
 
 
 
+    /**
+     * Method to clear every field (TextField)
+     */
     private void clearFields() {
     	IDFirstName.clear();
 		IDLastName.clear();
@@ -203,43 +241,5 @@ public class RecievingOptionsController extends Application implements Initializ
 		IDErrorMustFill.setVisible(true);
     }
 
-    public String HouseNumber() {
-		return IDHouseNumber.getText();
-	}
 
-	public void setHouseNumber(TextField houseNumber) {
-		IDHouseNumber = houseNumber;
-	}
-
-	public String getStreet() {
-		return IDStreet.getText();
-	}
-
-	public void setStreet(TextField street) {
-		IDStreet = street;
-	}
-
-	public String getFirstName() {
-		return IDFirstName.getText();
-	}
-
-	public void setFirstName(TextField firstName) {
-		IDFirstName = firstName;
-	}
-
-	public String getLastName() {
-		return IDLastName.getText();
-	}
-
-	public void setLastName(TextField lastName) {
-		IDLastName = lastName;
-	}
-
-	public String getPhoneNumber() {
-		return IDPhoneNumber.getText();
-	}
-
-	public void setPhoneNumber(TextField phoneNumber) {
-		IDPhoneNumber = phoneNumber;
-	}
 }
