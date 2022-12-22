@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ResourceBundle;
-
 import customermethods.CommonMethods;
 import customermethods.Customer;
 import javafx.application.Application;
@@ -18,7 +17,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +26,7 @@ import javafx.stage.Stage;
  * Customer chooses area and location from two combo boxes
  * Area Box
  * Location Box
+ * Note: this class uses help from Customer and Order class to set and get some functionality 
  * @author Mahran
  *
  */
@@ -69,16 +68,7 @@ public class StartOrderInterFaceController extends Application implements Initia
      */
     @FXML
     private ImageView IDhelp;
-    /**
-     * a white container to contain objects {buttons ,images,..} and decoration 
-     */
-    @FXML
-    private Pane zr2;
-    /**
-     * ImageView that contains a location icon for decoration 
-     */
-    @FXML
-    private ImageView IDLocationIMG;
+
   
     
 	/**
@@ -125,7 +115,7 @@ public class StartOrderInterFaceController extends Application implements Initia
 	
 	/**
 	 * Method for going back to the previous page in this case the customer page
-	 * @param event event of the the arrow (back) icon clicked
+	 * @param event event of the arrow (back) icon clicked
 	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
 	 */
 	public void back(MouseEvent event) throws Exception 

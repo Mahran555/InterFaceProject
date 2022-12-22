@@ -2,7 +2,6 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import customermethods.CommonMethods;
 import customermethods.Customer;
 import javafx.application.Application;
@@ -14,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -25,6 +23,7 @@ import javafx.event.ActionEvent;
  * to Start Order 
  * to manage Orders
  * to MyCart
+ * Note: this class uses help from Customer and Order class to set and get some functionalities 
  * @author Mahran
  *
  */
@@ -71,11 +70,6 @@ public class CustomerPageInterFaceController extends Application implements Init
     @FXML
     private ImageView IDstartorderimg1;
     /**
-     * a white container to contain objects {buttons ,images,..} and decoration 
-     */
-    @FXML 
-    private Pane zr2;
-    /**
      * Button to MyCart
      */
     @FXML
@@ -96,8 +90,6 @@ public class CustomerPageInterFaceController extends Application implements Init
     @FXML
     private Button startO1;
     
-  
-
 	/**
 	 * to save and show the stage
 	 */
