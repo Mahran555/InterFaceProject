@@ -177,7 +177,7 @@ public class RecievingOptionsController extends Application implements Initializ
 	
 	/**
 	 * Method for going back to the previous page in this case the Catalog Page
-	 * @param event event of the the arrow (back) icon clicked
+	 * @param event event if the the arrow (back) icon clicked
 	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
 	 */
 	public void back(MouseEvent event) throws Exception 
