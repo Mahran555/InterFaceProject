@@ -17,47 +17,91 @@ import javafx.stage.StageStyle;
 
 
 
+/**
+ * This class is a Customer information class, to save the Customer information 
+ * connects between classes to get and set information in case its needed 
+ * @author Mahran
+ *
+ */
 public class Customer {
+	/**
+	 * to save the where the customer came from
+	 */
 	public static String cameFrom="Location";
+	/**
+	 * to save the customer's response to the confrimation message
+	 */
 	public static String respond = "No";
-	public static Label IDErrorEmptyCart;//added to disable error from view after adding product
-	public static VBox IDMiniCartVBox;//mini cart in category page
-	public static Label IDTotalPrice;//total price in category page
-	public static AnchorPane IDAddingProperties;//anchor adding properties in product cell
-	public static Label IDLabelAdded;//add to cart label in product cell
-	public static CatalogPageInterFaceController con;//controller for catalog page (to activate search when needed "refresh")
+	/**
+	 * Label that shows error message
+	 * in this case to disable error from view after adding product
+	 */
+	public static Label IDErrorEmptyCart;
+	/**
+	 * VBox to save/show the products in Mini Cart for the customer in the catalog page
+	 */
+	public static VBox IDMiniCartVBox;
+	/**
+	 * Label to show total price in category page
+	 */
+	public static Label IDTotalPrice;
+	/**
+	 * AnchoPane to save adding properties AnchorPane from product cell
+	 */
+	public static AnchorPane IDAddingProperties;
+	/**
+	 * Label to show added to cart in product cell
+	 */
+	public static Label IDLabelAdded;
+	/**
+	 * to save the controller for catalog page (to activate search when needed "refresh")
+	 */
+	public static CatalogPageInterFaceController con;
+	/**
+	 * ImageView to show what page customer came from
+	 */
 	public static ImageView IDLocationStep;
 	/**
 	 * Image to help change the image path (top bar) according to the path the the customer took
 	 */
 	private static Image img;
+	/**
+	 * Static Method to set and shows a help message (for question mark "help" icon) as the message parameter that was sent
+	 * @param message
+	 */
 	@SuppressWarnings("static-access")
 	public static void help (String message) {
-    	Alert alert = new Alert(AlertType.INFORMATION);//init alert message for information
-    	alert.setContentText(message);//showed message
-    	alert.initStyle(StageStyle.DECORATED.UNDECORATED);//style
-    	alert.show();//show
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setContentText(message);
+    	alert.initStyle(StageStyle.DECORATED.UNDECORATED);
+    	alert.show();
 	}
 	
-	public static void cancelOrder() {
-		
-	}
+
+	/**
+	 * Static Method to create a suitable confirmation message and sets it 
+	 * as sent in message parameter and header and shows it
+	 * and set the response of the customer to the choice that he made
+	 * @param message
+	 * @param header
+	 * @param c
+	 */
 	@SuppressWarnings("static-access")
-	public static void confirmationMessage(String message,String header,Class<?> c)//creating suitable confirmation message
+	public static void confirmationMessage(String message,String header,Class<?> c)
     {
 		
 		//create buttons yes or no
 		ButtonType yes = new ButtonType("Yes");
 		ButtonType no = new ButtonType("No");
-		Alert alert1 = new Alert(AlertType.NONE,"Confimation",yes,no);//init alert message 
+		Alert alert1 = new Alert(AlertType.NONE,"Confimation",yes,no);
 		alert1.setContentText(message);//showed message
 		alert1.setHeaderText(header);
-		DialogPane dialogPane = alert1.getDialogPane();//setting our css file for the diaglog pane(message)
+		DialogPane dialogPane = alert1.getDialogPane();
 		dialogPane.getStylesheets().add(c.getResource("/cssF/myDialogs.css").toExternalForm());
 		dialogPane.getStyleClass().add("myDialog");
-		alert1.initStyle(StageStyle.DECORATED.UNDECORATED);//style
+		alert1.initStyle(StageStyle.DECORATED.UNDECORATED);
 		alert1.showAndWait().ifPresent(response->{
-  		if(response == yes)//if user want to use the coupon
+  		if(response == yes)
   			respond="yes";
   		else
   			respond = "No";
@@ -65,7 +109,13 @@ public class Customer {
 		});
 		
     }
-	//to check legality of textfield (for example only numbers and needed length)
+	/**
+	 * Static Method to check the TextField legality such as :
+	 * the input are only numbers
+	 * the input length is less or equals to limit parameter
+	 * @param tFID the TextField 
+	 * @param limit the length limit
+	 */
 	public static void textLegality(TextField tFID , int limit) {
 		tFID.textProperty().addListener(new ChangeListener<String>() {//only numbers are allowed
 		    @Override
@@ -81,13 +131,17 @@ public class Customer {
 		    	}
 		    });
 	}
+	/**
+	 * Static Method to show the completion message that was sent as a parameter
+	 * @param message message to show 
+	 */
 	@SuppressWarnings("static-access")
-	public static void CompletionMessage(String message) {//message of completion 
+	public static void CompletionMessage(String message) { 
 		
-		Alert alert = new Alert(AlertType.INFORMATION);//init alert message for information
-	  	alert.setContentText(message);//showed message
-	  	alert.initStyle(StageStyle.DECORATED.UNDECORATED);//style
-	  	alert.showAndWait();//show and wait untill ok is pressed
+		Alert alert = new Alert(AlertType.INFORMATION);
+	  	alert.setContentText(message);
+	  	alert.initStyle(StageStyle.DECORATED.UNDECORATED);
+	  	alert.showAndWait();
 	  	
 	}
 	/**
