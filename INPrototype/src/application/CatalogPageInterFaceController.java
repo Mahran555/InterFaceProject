@@ -65,7 +65,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	private String[] category= {"All","Chips","Soft-Drinks","Choclate-Bars","jelly-Sweets","Others"};
 	private String[] filter= {"All","Healthy","Low-Sugar","Big-Size","Normal-Size","Others"};
 	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
-	private String[] DBId = {"1","2","3"};
+	private String[] DBId = {"1","11","12"};
 	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
 	private String[] DBPrice = {"1","2","0.5"};
 	private String[] DBspecification = {"Others","Big-Size","Normal-Size"};

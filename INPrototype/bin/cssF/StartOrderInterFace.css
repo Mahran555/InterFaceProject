@@ -7,7 +7,7 @@
 	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);
 }
 #IDAreaBox{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-color: #FF0000 ;
 	-fx-font-size: 18px;
@@ -16,7 +16,7 @@
   -fx-font-family: "Courier New";
 }
 #IDLoactionBox{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-color: #FF0000 ;
 	-fx-font-size: 18px;
@@ -26,7 +26,7 @@
 }
 .combo-box-popup .list-view .list-cell
 {
--fx-background-color: "#90BB14"; //green
+-fx-background-color: "#90BB14"; 
 	
  	-fx-text-fill: #FAFAF7 ;
  	-fx-font-size: 18px;

@@ -9,8 +9,8 @@
 	-fx-border-color : "#90BB14"
 	
 }
-#zr1{//connect button
-	-fx-background-color: "#90BB14"; //green
+#zr1{
+	-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 18px;

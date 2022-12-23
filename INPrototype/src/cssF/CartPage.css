@@ -19,7 +19,7 @@
 }
 
 #IDCompleteOrderBtn{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;
@@ -28,7 +28,7 @@
 
 }
 #IDEditBtn{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;
@@ -37,7 +37,7 @@
 
 }
 #IDCancelOrderBtn{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 14px;

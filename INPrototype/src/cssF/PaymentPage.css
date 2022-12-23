@@ -50,7 +50,7 @@
 	-fx-border-color : "#90BB14"
 }
 #IDConfirm{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 15px;
@@ -59,7 +59,7 @@
 }
 
 #IDCancel{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 15px;
@@ -68,7 +68,7 @@
 }
 .combo-box-popup .list-view .list-cell
 {
--fx-background-color: "#90BB14"; //green
+-fx-background-color: "#90BB14"; 
 	
  	-fx-text-fill: #FAFAF7 ;
  	-fx-font-size: 13px;
@@ -82,7 +82,7 @@
 	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
 }
 #IDCoupon{
-			-fx-background-color: "#90BB14"; //green
+			-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-color: #FF0000 ;
 	-fx-font-size: 13px;
@@ -104,7 +104,7 @@
 	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
 }
 #IDUseCoupon{
-			-fx-background-color: "#90BB14"; //green
+			-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 13px;
@@ -125,5 +125,5 @@
 
 .dialog-pane .header-panel .label {
     -fx-font-style: italic;
-   // -fx-font-size: 2em;
+
 }

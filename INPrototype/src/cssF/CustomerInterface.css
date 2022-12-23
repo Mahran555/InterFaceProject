@@ -10,7 +10,7 @@
 
 
 #logoutBtn{
-	-fx-background-color: "#90BB14"; //green
+	-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 18px;
@@ -19,7 +19,7 @@
   -fx-font-family: "Courier New";
 }
 #manageO1{
-	-fx-background-color: "#90BB14"; //green
+	-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 18px;
@@ -28,7 +28,7 @@
   -fx-font-family: "Courier New";
 }
 #startO1{
-	-fx-background-color: "#90BB14"; //green
+	-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 18px;
@@ -38,7 +38,7 @@
   	
 }
 #IDcart{
-		-fx-background-color: "#90BB14"; //green
+		-fx-background-color: "#90BB14"; 
 	-fx-background-radius: 50;
 	-fx-text-fill: white;
 	-fx-font-size: 18px;
@@ -58,7 +58,7 @@
     	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 7 , 7 );
     }
     
-.label{//all labels without welcome label (welcome back hasan)
+.label{
 	-fx-background-color: null; 
 	-fx-text-fill: #90BB14;
 	-fx-font-size: 20px;
