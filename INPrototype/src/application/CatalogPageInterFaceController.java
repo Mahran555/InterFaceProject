@@ -36,8 +36,6 @@ import javafx.event.ActionEvent;
  * Classes such as :
  * ProductCellController
  * Note: this class uses help from Customer and Order class to set and get some functionalities 
- * 
- * 
  * @author Mahran
  *
  */
@@ -165,9 +163,9 @@ public class CatalogPageInterFaceController extends Application implements Initi
 		IDFilter.getItems().addAll(filter);
 		IDSearch.setText(null);
 		IDErrorEmptyCart.setVisible(false);
-		productsViewByCategoryAndFilter(null);//lunch as first time to load every thing 
-		IDCat.setOnAction(this::productsViewByCategoryAndFilter);//if customer changed category
-		IDFilter.setOnAction(this::productsViewByCategoryAndFilter);//if customer changed Filter
+		productsViewByCategoryAndFilter(null);
+		IDCat.setOnAction(this::productsViewByCategoryAndFilter);
+		IDFilter.setOnAction(this::productsViewByCategoryAndFilter);
 		isInCart();
 		}
 	/**

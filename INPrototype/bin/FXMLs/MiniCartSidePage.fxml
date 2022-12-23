@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="245.0" style="fx-background-color: transparent; -fx-border-color: #90BB14; -fx-border-width: 0px 0px 2px 0px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MiniCartSideController">
+   <children>
+      <ImageView fx:id="IDProductImg" fitHeight="52.0" fitWidth="57.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );">
+         <image>
+            <Image url="@../Products/unavailable.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="IDProductName" layoutX="66.0" layoutY="29.0" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 ); -fx-text-fill: #8bb020;" text="Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IDProductQuantity" editable="false" layoutX="138.0" layoutY="27.0" prefHeight="17.0" prefWidth="34.0" style="-fx-background-radius: 7; -fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );" />
+      <Label fx:id="IDProductPrice" layoutX="208.0" layoutY="31.0" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 0, 0 , 0, 0 ); -fx-text-fill: #8bb020;" text="1$" />
+      <ImageView fx:id="IDDecrease" fitHeight="21.0" fitWidth="27.0" layoutX="112.0" layoutY="29.0" onMouseClicked="#decreaseQuantity" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );">
+         <image>
+            <Image url="@../icons/decrease.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDIncrease" fitHeight="21.0" fitWidth="27.0" layoutX="179.0" layoutY="29.0" onMouseClicked="#increaseQuantity" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );">
+         <image>
+            <Image url="@../icons/increase.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="IDCancel" layoutX="209.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#RemoveProduct" prefHeight="5.0" prefWidth="21.0" style="-fx-background-radius: 50; -fx-font-weight: bold; -fx-text-fill: white; -fx-background-color: #90BB14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 3 , 3 );" text="X" />
+   </children>
+</Pane>

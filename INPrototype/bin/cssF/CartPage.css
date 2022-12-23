@@ -1,0 +1,62 @@
+.root{
+	-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);
+}
+#zr2{
+	-fx-background-color: "#FFFEFC";
+	-fx-background-radius: 30;
+	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);
+}
+
+#IDScrollPane .viewport{
+	-fx-background-color: "#FFFEFC";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+	
+	
+	
+}
+#IDScrollPaneMiniCart .viewport{
+	-fx-background-color: transparent;
+}
+
+#IDCompleteOrderBtn{
+		-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+
+}
+#IDEditBtn{
+		-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+
+}
+#IDCancelOrderBtn{
+		-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 14px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+
+}
+	#IDErrorEmptyCart{
+		-fx-text-fill: red;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+		
+	}
+	#IDTotalCartPrice{
+				
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 16px;
+	-fx-font-weight:bold; 
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDScrollPane .viewport{
+	-fx-background-color: transparent;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="IDAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="823.0" style="-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ManageOrdersInterFaceController">
+   <children>
+      <Pane fx:id="zr2" layoutX="45.0" layoutY="125.0" prefHeight="445.0" prefWidth="733.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0">
+         <children>
+            <ScrollPane fx:id="IDScrollPane" layoutX="16.0" layoutY="133.0" prefHeight="302.0" prefWidth="701.0" style="-fx-background-color: transparent;">
+               <content>
+                  <AnchorPane prefHeight="294.0" prefWidth="698.0">
+                     <children>
+                        <TableView fx:id="IDTableView" editable="true" layoutX="7.0" layoutY="13.0" prefHeight="286.0" prefWidth="684.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="3.0">
+                          <columns>
+                            <TableColumn fx:id="IDOrderid" prefWidth="91.0" resizable="false" text="OrderID" />
+                            <TableColumn fx:id="IDproducts" prefWidth="247.0" resizable="false" text="Products" />
+                              <TableColumn fx:id="IDTotalPrice" prefWidth="75.0" resizable="false" text="Total Price" />
+                              <TableColumn fx:id="IDAction" prefWidth="264.0" resizable="false" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="108.0" fitWidth="114.0" layoutX="305.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/ordermanagement.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="775.0" layoutY="14.0" onMouseClicked="#clsoe" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDhelp" fitHeight="34.0" fitWidth="44.0" layoutX="734.0" layoutY="14.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/help.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backarrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDLocationStep1" fitHeight="54.0" fitWidth="72.0" layoutX="231.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ordermanagement.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="152.0" layoutY="99.0" prefHeight="3.0" prefWidth="496.0" />
+      <ImageView fx:id="IDOrderCatalagStep2" fitHeight="54.0" fitWidth="72.0" layoutX="334.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ordercatalog.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDMethodsStep3" fitHeight="54.0" fitWidth="72.0" layoutX="424.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/methods.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDPaymentStep4" fitHeight="54.0" fitWidth="72.0" layoutX="515.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/payment.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="1033.0" stylesheets="@../CssF/Logininterface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecievingOptionsController">
+   <children>
+      <Pane fx:id="zr2" layoutX="55.0" layoutY="114.0" prefHeight="539.0" prefWidth="713.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0">
+         <children>
+            <Button fx:id="IDCancelOrder" layoutX="470.0" layoutY="464.0" mnemonicParsing="false" onAction="#CancelOrder" prefHeight="30.0" prefWidth="99.0" style="-fx-background-radius: 30px;" text="Cancel Order" />
+            <Separator layoutX="30.0" layoutY="123.0" prefHeight="3.0" prefWidth="661.0" />
+            <Label fx:id="IDTitle" layoutX="203.0" layoutY="46.0" text="Recieving Options">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="IDPickupText" layoutX="30.0" layoutY="282.0" />
+            <AnchorPane fx:id="DeliveryInfo" layoutX="45.0" layoutY="220.0" prefHeight="259.0" prefWidth="331.0">
+               <children>
+                  <TextField fx:id="IDFirstName" focusTraversable="false" layoutX="139.0" layoutY="33.0" prefHeight="21.0" prefWidth="142.0" promptText="Enter First Name" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="33.0" />
+                  <TextField fx:id="IDPhoneNumber" focusTraversable="false" layoutX="140.0" layoutY="114.0" prefHeight="21.0" prefWidth="142.0" promptText="10 Digits Number" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="115.0" />
+                  <TextField fx:id="IDHouseNumber" focusTraversable="false" layoutX="140.0" layoutY="157.0" prefHeight="21.0" prefWidth="142.0" promptText="3 Digits Number" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="156.0" />
+                  <TextField fx:id="IDLastName" focusTraversable="false" layoutX="139.0" layoutY="74.0" prefHeight="21.0" prefWidth="142.0" promptText="Enter Last Name" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="74.0" />
+                  <TextField fx:id="IDStreet" focusTraversable="false" layoutX="135.0" layoutY="230.0" prefHeight="21.0" prefWidth="142.0" promptText="Enter Street" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="197.0" />
+                  <Label layoutX="35.0" layoutY="37.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;" text="First Name* :" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="33.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="118.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;" text="Phone Number* :" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="115.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="182.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;" text="Street :" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="197.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="75.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;" text="Last Name* :" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="74.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="36.0" layoutY="149.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );;" text="House Number* :" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="156.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <RadioButton fx:id="IDRadioDelivery" layoutX="254.0" layoutY="177.0" mnemonicParsing="false" onAction="#DeliveryRecieving" style="-fx-text-fill: #90BB14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );;" text="Delivery">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="IDRadioPickup" layoutX="415.0" layoutY="177.0" mnemonicParsing="false" onAction="#PhysicalRecieving" style="-fx-text-fill: #90BB14; -fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );;" text="PickUp">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <Button fx:id="IDCheckout" layoutX="589.0" layoutY="464.0" mnemonicParsing="false" onAction="#ProcceedToPayment" prefHeight="30.0" prefWidth="90.0" style="-fx-background-radius: 30px;" text="CheckOut" />
+            <Label layoutX="69.0" layoutY="172.0" style="-fx-text-fill: #90BB14; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );" text="Choose Option: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="IDOptionImg" fitHeight="140.0" fitWidth="130.0" layoutX="470.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Products/unavailable.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="IDErrorMustFill" layoutX="104.0" layoutY="481.0" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="985.0" layoutY="14.0" onMouseClicked="#clsoe" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="610.0" AnchorPane.leftAnchor="985.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../icons/Close.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDhelp" fitHeight="34.0" fitWidth="44.0" layoutX="944.0" layoutY="14.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/help.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="24.0" layoutY="14.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/backarrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDLocationStep" fitHeight="54.0" fitWidth="72.0" layoutX="348.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/map.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="127.0" layoutY="99.0" prefHeight="3.0" prefWidth="773.0" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="133.0" />
+      <ImageView fx:id="IDOrderCatalagStep2" fitHeight="54.0" fitWidth="72.0" layoutX="451.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/ordercatalog.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDMethodsStep3" fitHeight="54.0" fitWidth="72.0" layoutX="541.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/methods.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IDPaymentStep4" fitHeight="54.0" fitWidth="72.0" layoutX="632.0" layoutY="35.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/payment.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="776.0" layoutY="373.0" prefHeight="3.0" prefWidth="229.0" />
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="366.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="195.0" fitWidth="190.0" layoutX="796.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/shipment.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="454.0" layoutY="73.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/checkmark.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

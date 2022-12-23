@@ -1,0 +1,45 @@
+.root{
+	-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);
+}
+
+#info1{
+	-fx-background-color: "#FFFEFC";
+	-fx-background-radius: 30;
+	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);
+}
+#loginBtn{
+	-fx-background-color: "#90BB14"; //green
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 18px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+  -fx-font-family: "Courier New";
+	
+	}
+#passwordID{
+	-fx-background-radius: 7;
+	-fx-background-color : transparent;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#usernameID{
+	-fx-background-radius: 7;
+	-fx-background-color : transparent;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#lockIMG{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 2 , 2 );
+}
+#userIMG
+{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#userNameIMG{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 2 , 2 );
+}
+#IDErrorLabel{
+	-fx-text-fill: red;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+}

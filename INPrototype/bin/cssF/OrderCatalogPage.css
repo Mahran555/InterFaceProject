@@ -1,0 +1,123 @@
+.root{
+	-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);
+}
+#zr2{
+	-fx-background-color: "#FFFEFC";
+	-fx-background-radius: 30;
+	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);
+}
+#IDSearch{
+	-fx-background-radius: 7;
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-background-color : "transparent";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+	-fx-border-color : "#90BB14"
+}
+#IDFilter{
+			-fx-background-color: "#90BB14"; 
+	-fx-background-radius: 50;
+	-fx-color: #FF0000 ;
+	-fx-font-size: 15px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+  -fx-font-family: "Courier New";
+}
+#IDCat{
+			-fx-background-color: "#90BB14"; 
+	-fx-background-radius: 50;
+	-fx-color: #FF0000 ;
+	-fx-font-size: 15px;
+	-fx-font-weight:bold; 
+  	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+  -fx-font-family: "Courier New";
+}
+#IDTitle{
+		-fx-font-family: "Courier New";
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 30px;
+	-fx-font-weight:bold; 
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
+}
+#IDMyCart{
+			
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 30px;
+	-fx-font-weight:bold; 
+
+}
+#IDTotalPrice{
+				
+	-fx-text-fill: "#8bb020";
+	-fx-font-size: 18px;
+	-fx-font-weight:bold; 
+}
+#IDScrollPane .viewport{
+	-fx-background-color: "#FFFEFC";
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+	
+	
+	
+}
+#IDScrollPaneMiniCart .viewport{
+	-fx-background-color: transparent;
+}
+#IDMiniCartVBox{
+	-fx-background-color: transparent;
+}
+#IDCatImg{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDFilterImg{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDSearchDataImg{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDGoSeachImg{
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+.combo-box-popup .list-view .list-cell
+{
+-fx-background-color: "#90BB14"; 
+	
+ 	-fx-text-fill: #FAFAF7 ;
+ 	-fx-font-size: 15;
+	-fx-font-weight:bold; 
+  	
+  	
+}
+.combo-box-popup .list-view{
+	-fx-background-color : transparent;
+	-fx-background-radius: 20;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 13, 0 , 7 , 7 );
+}
+#IDCompleteOrderBtn{
+	-fx-background-color: "#90BB14"; 
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 13px;
+	-fx-font-weight:bold; 
+ 
+	
+	}
+	#IDCancelOrderBtn{
+	-fx-background-color: "#90BB14"; 
+	-fx-background-radius: 50;
+	-fx-text-fill: white;
+	-fx-font-size: 13px;
+	-fx-font-weight:bold; 
+  	
+	
+	}
+	#IDProductNotFound
+	{
+		-fx-text-fill: "#8bb020";
+		-fx-font-weight:bold; 
+		-fx-font-size: 25px;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 10, 0 , 5 , 8 );
+	}
+	#IDErrorEmptyCart{
+		-fx-text-fill: red;
+	-fx-effect: dropshadow( three-pass-box , #A2A09F, 15, 0 , 5 , 5 );
+		
+	}
