@@ -29,7 +29,7 @@ public class Customer {
 	 */
 	public static String cameFrom="Location";
 	/**
-	 * to save the customer's response to the confrimation message
+	 * to save the customer's response to the confirmation message
 	 */
 	public static String respond = "No";
 	/**
