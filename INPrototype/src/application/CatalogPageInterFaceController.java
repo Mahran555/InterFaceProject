@@ -144,7 +144,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	/**
 	 *initialize the current path that customer took
 	 *initialize all the details that needed in the helper classes 
-	 *and in the current calss
+	 *and in the current class
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

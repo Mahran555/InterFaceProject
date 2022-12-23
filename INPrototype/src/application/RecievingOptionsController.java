@@ -131,8 +131,8 @@ public class RecievingOptionsController extends Application implements Initializ
 		DeliveryInfo.setVisible(false);
 		IDOptionImg.setVisible(false);
 		IDCheckout.setVisible(false);
-		Customer.textLegality(IDPhoneNumber,10);//text legality for phone number with length 10
-		Customer.textLegality(IDHouseNumber,3);//text legality for house number with length 3
+		Customer.textLegality(IDPhoneNumber,10);
+		Customer.textLegality(IDHouseNumber,3);
 	}
 	
 	/**
@@ -198,19 +198,19 @@ public class RecievingOptionsController extends Application implements Initializ
 	 */
 	public void PhysicalRecieving(ActionEvent event) throws Exception
 	{
-		IDRadioPickup.setSelected(true);//keep it selected
-		IDErrorMustFill.setVisible(false);//error label
-		IDCheckout.setVisible(true);//check out button show
-		IDPickupText.setVisible(true);//show the text of pickup when selected
-		IDPickupText.setText("You can pickup your order\n"//set text when pickup choosed
+		IDRadioPickup.setSelected(true);
+		IDErrorMustFill.setVisible(false);
+		IDCheckout.setVisible(true);
+		IDPickupText.setVisible(true);
+		IDPickupText.setText("You can pickup your order\n"
 				+ "after completing your order \n"
 				+ "press checkout to processed ");
-		IDRadioDelivery.setSelected(false);//remove selection of delivery radio button
+		IDRadioDelivery.setSelected(false);
 		//insert the needed image
 		img = new Image("/icons/pickup.png");
 		IDOptionImg.setImage(img);
 		IDOptionImg.setVisible(true);
-		DeliveryInfo.setVisible(false);//hide delivery information fields
+		DeliveryInfo.setVisible(false);
 		
 	}
 	
@@ -294,12 +294,11 @@ public class RecievingOptionsController extends Application implements Initializ
 	 * @param event event of the Cancel Order button clicked
 	 * @throws Exception Exception will be thrown if an error occurs when switching the stage 
 	 */
-	public void CancelOrder(ActionEvent event) throws Exception{//cancel order
+	public void CancelOrder(ActionEvent event) throws Exception{
 		Customer.confirmationMessage("Do you want to cancel this order\n","Cancel Order\n",getClass());
 		if(Customer.respond == "yes")
 		{
-		Order.clearOrder();//clear everything 
-		//go to the customer homepage
+		Order.clearOrder();
 		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		root=CommonMethods.switchScene(getClass(),stage, "CustomerPage.fxml","CustomerInterface.css");
 		}

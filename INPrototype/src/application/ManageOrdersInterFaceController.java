@@ -80,7 +80,7 @@ public class ManageOrdersInterFaceController extends Application implements Init
     
 	/**
 	 *initialize all the details that needed in the helper classes 
-	 *and in the current calss
+	 *and in the current class
 	 *initialize the table view and every row/order in it
 	 */
 	@Override

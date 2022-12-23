@@ -164,7 +164,7 @@ public class PaymentController extends Application implements Initializable  {
     /**
      * Method to choose coupon from the coupon Combo Box and and calculate the final price after the coupon
      * and shows it on the screen
-     * @param event if a coupon is choosed from the coupon Combo Box
+     * @param event if a coupon is chosed from the coupon Combo Box
      */
     public void chooseCoupon(ActionEvent event) {
     	if(IDCoupon.getValue()=="None")

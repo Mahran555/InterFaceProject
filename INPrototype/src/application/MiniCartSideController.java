@@ -87,7 +87,7 @@ public class MiniCartSideController   {
 	 * @param price price of the product
 	 * @param quantity quantity of the product
 	 * @param maxQuan maximum quantity of the product
-	 * @param node node (fxml) of the product
+	 * @param node node (FXML) of the product
 	 */
 	public void setData(String name,String id,String price,String quantity,String maxQuan,Node node) {
 		this.productID = id;

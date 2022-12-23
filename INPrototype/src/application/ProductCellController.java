@@ -132,8 +132,8 @@ public class ProductCellController  implements Initializable {
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		Customer.IDLabelAdded = IDLabelAdded;//init to Order
-		Customer.IDAddingProperties = IDAddingProperties;//init to Order
+		Customer.IDLabelAdded = IDLabelAdded;
+		Customer.IDAddingProperties = IDAddingProperties;
 		textQuantityCheck(IDQuantity);
 
 	
@@ -175,15 +175,15 @@ public class ProductCellController  implements Initializable {
 	 */
 	public void increaseQuantity(MouseEvent event)throws Exception
 	{
-		if(IDQuantity.getText().equals(""))//if quantity field is empty set it to 0
+		if(IDQuantity.getText().equals(""))
 		{
 			IDQuantity.setText("0");
 		}
-		quantity = Integer.parseInt(IDQuantity.getText().toString());//save quantity
-		if(quantity >= this.maxQuantity)//check if we reached max quantity
+		quantity = Integer.parseInt(IDQuantity.getText().toString());
+		if(quantity >= this.maxQuantity)
 			IDQuantity.setText(this.maxQuantity+"");
 		else {
-			IDQuantity.setText(++quantity+"");//increase quantity
+			IDQuantity.setText(++quantity+"");
 		}
 		
 	}
@@ -197,21 +197,21 @@ public class ProductCellController  implements Initializable {
 	public void decreaseQuantity(MouseEvent event)throws Exception
 	{
 		
-		if(IDQuantity.getText().equals(""))//if quantity field is empty set it to 0
+		if(IDQuantity.getText().equals(""))
 		{
 			IDQuantity.setText("0");
 		}
-		quantity = Integer.parseInt(IDQuantity.getText().toString());//save quantity
-		if(quantity  == 1)//check if we reached min quantity
+		quantity = Integer.parseInt(IDQuantity.getText().toString());
+		if(quantity  == 1)
 			IDQuantity.setText(quantity+"");
 		else 
-			IDQuantity.setText(--quantity+"");//decrease quantity
+			IDQuantity.setText(--quantity+"");
 		
 	}
 
 	/**
 	 * Method for adding product to the Mini cart (on the side of the screen),
-	 * in case add to cart is clicked a mini cart cell would be created according to
+	 * in case add to cart is clicked a Mini cart cell would be created according to
 	 * this product and the information in it then it would be added and implemented in
 	 * the stage/scene of the catalog page
 	 * @param event event of clicking Add To Cart Button

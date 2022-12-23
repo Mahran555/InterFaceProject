@@ -102,7 +102,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 	 *initialize the product in the cart
 	 *initialize the saved cart if it exists
 	 *initialize all the details that needed in the helper classes 
-	 *and in the current calss
+	 *and in the current class
 	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
