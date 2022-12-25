@@ -1,7 +1,7 @@
-.root{//full background
+.root{
 	-fx-background-color: linear-gradient(to top,#FFDF7C,#f7f4e9);
 }
-#zr2{//pane white background
+#zr2{
 	-fx-background-color: "#FFFEFC";
 	-fx-background-radius: 30;
 	-fx-effect: dropshadow( three-pass-box , #D2D1C9, 8, 0 , 5, 5);

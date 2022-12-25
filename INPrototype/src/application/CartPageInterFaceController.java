@@ -51,7 +51,7 @@ public class CartPageInterFaceController extends Application implements Initiali
 	 * To get all Informations from the data base and saving them in arrays of strings 
 	 */
 	private String[] DBName = {"Sprite","Elit Bar","Yoguta"};
-	private String[] DBId = {"1","2","3"};
+	private String[] DBId = {"1","11","12"};
 	private String[] DBCategory = {"Soft-Drinks","Choclate-Bars","jelly-Sweets"};
 	private String[] DBPrice = {"1","2","0.5"};
 	private String[] DBspecification = {"Others","Big-Size","Normal-Size"};

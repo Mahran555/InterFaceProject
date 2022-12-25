@@ -72,7 +72,7 @@ public class CatalogPageInterFaceController extends Application implements Initi
 	private String[] DBQuantities = {"10","1","3"};
 	private String[] DBArea = {"Haifa","Haifa","Haifa"};
 	private String[] DBLocation = {"Haifa-University","Haifa-University","Haifa-University"};
-	private String[] DBOnsale = {"1"};
+	private String[] DBOnsale = {"1","11","12"};
 	private String DBDisccount = "20";
 		/**
 		 * Label that shows area and location 
